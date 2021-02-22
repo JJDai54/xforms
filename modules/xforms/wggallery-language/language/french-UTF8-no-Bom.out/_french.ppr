@@ -1,0 +1,49 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultDir=J:\_Contacts\Conseil Des Sages\Site Web\sages91.fr\WEB Site principal-old\web\modules\wggallery-french\french
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+HTServer=localhost
+Extensions=*.*
+[Project tree]
+_french
+	+french
+		+help
+			help\help.html
+			help\index.html
+		+mail_template
+			mail_template\global_alb_approve_notify.tpl
+			mail_template\global_alb_delete_notify.tpl
+			mail_template\global_alb_modify_notify.tpl
+			mail_template\global_alb_new_notify.tpl
+			mail_template\global_img_approve_notify.tpl
+			mail_template\global_img_comment_notify.tpl
+			mail_template\global_img_delete_notify.tpl
+			mail_template\global_img_new_notify.tpl
+			mail_template\index.html
+		admin.php
+		blocks.php
+		common.php
+		directorychecker.php
+		feedback.php
+		filechecker.php
+		index.html
+		main.php
+		modinfo.php
+[Open project files]
+0=common.php
+[Selected Project Files]
+Main=
+Selected=common.php
+[common.php]
+TopLine=1
+Caret=1,1

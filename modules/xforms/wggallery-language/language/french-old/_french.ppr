@@ -1,0 +1,118 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.HideOutput=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultDir=J:\_Contacts\Conseil Des Sages\Site Web\sages91.fr\WEB Site principal-old\web\modules\wggallery-french\french
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+Extensions=*.*
+[Project tree]
+_french
+	+french
+		+help
+			help\help.html
+			help\index.html
+		+mail_template
+			mail_template\global_alb_approve_notify.tpl
+			mail_template\global_alb_delete_notify.tpl
+			mail_template\global_alb_modify_notify.tpl
+			mail_template\global_alb_new_notify.tpl
+			mail_template\global_img_approve_notify.tpl
+			mail_template\global_img_comment_notify.tpl
+			mail_template\global_img_delete_notify.tpl
+			mail_template\global_img_new_notify.tpl
+			mail_template\index.html
+		admin.php
+		blocks.php
+		common.php
+		common-fr.php
+		directorychecker.php
+		feedback.php
+		filechecker.php
+		index.html
+		main.php
+		modinfo.php
+		modinfo-fr.php
+[Open project files]
+0=admin.php
+1=filechecker.php
+2=modinfo.php
+3=main.php
+4=feedback.php
+5=directorychecker.php
+6=common-fr.php
+7=common.php
+8=blocks.php
+9=mail_template\global_alb_approve_notify.tpl
+10=mail_template\global_alb_delete_notify.tpl
+11=mail_template\global_alb_modify_notify.tpl
+12=mail_template\global_alb_new_notify.tpl
+13=mail_template\global_img_approve_notify.tpl
+14=mail_template\global_img_comment_notify.tpl
+15=mail_template\global_img_delete_notify.tpl
+16=mail_template\global_img_new_notify.tpl
+17=help\help.html
+[Selected Project Files]
+Main=
+Selected=blocks.php
+[admin.php]
+TopLine=1
+Caret=52,25
+[filechecker.php]
+TopLine=1
+Caret=1,1
+[modinfo.php]
+TopLine=143
+Caret=1,190
+[main.php]
+TopLine=66
+Caret=1,66
+[feedback.php]
+TopLine=1
+Caret=1,1
+[directorychecker.php]
+TopLine=1
+Caret=1,1
+[common-fr.php]
+TopLine=203
+Caret=36,219
+[common.php]
+TopLine=1
+Caret=29,24
+[blocks.php]
+TopLine=1
+Caret=38,38
+[mail_template\global_alb_approve_notify.tpl]
+TopLine=1
+Caret=1,1
+[mail_template\global_alb_delete_notify.tpl]
+TopLine=1
+Caret=1,1
+[mail_template\global_alb_modify_notify.tpl]
+TopLine=1
+Caret=1,1
+[mail_template\global_alb_new_notify.tpl]
+TopLine=1
+Caret=1,1
+[mail_template\global_img_approve_notify.tpl]
+TopLine=1
+Caret=1,1
+[mail_template\global_img_comment_notify.tpl]
+TopLine=1
+Caret=1,1
+[mail_template\global_img_delete_notify.tpl]
+TopLine=1
+Caret=1,1
+[mail_template\global_img_new_notify.tpl]
+TopLine=1
+Caret=1,1
+[help\help.html]
+TopLine=1
+Caret=1,1

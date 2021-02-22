@@ -1,0 +1,73 @@
+
+.blue-item           {}
+.blue-itemHead       {background-color: #548AC3;     color: #fff;}
+.blue-itemInfo       {background-color: #B6CDE4;     color: #000000;}
+.blue-itemTitle a    {background-color: transparent; color: #FFFFFF;}
+.blue-itemBody       {background-color: #E6EFEF;     color: #000000;}
+.blue-itemBody  td     {background-color: #E6EFEF;     color: #000000;}
+.blue-itemBody_scoop {background-color: #E6EFEF;     color: #000000;}
+.blue-itemText {}
+.blue-itemFoot       {background-color: #B6CDE4;     color: #000000;}
+
+/********************************************************************/
+.green-item {}
+.green-itemHead       {background-color: #22B14C;     color: #fff;}
+.green-itemInfo       {background-color: #98E0AD;     color: #000000;}
+.green-itemTitle a    {background-color: transparent; color: #FFFFFF;   }
+.green-itemBody       {background-color: #E6EFE5;     color: #000000;}
+.green-itemBody   td    {background-color: #E6EFE5;     color: #000000;}
+.green-itemBody_scoop {background-color: #E6EFE5;     color: #000000;}
+.green-itemText {}
+.green-itemFoot       {background-color: #C8EFD4 ;    color: #000000;}
+
+/********************************************************************/
+.purple-item {}
+.purple-itemHead       {background-color: #7A297B;     color: #FFFFFF;}
+.purple-itemInfo       {background-color: #C785C8;     color: #000000;}
+.purple-itemTitle a    {background-color: transparent; color: #FFFFFF;}
+.purple-itemBody       {background-color: #EDD3ED;     color: #000000;}
+.purple-itemBody   td    {background-color: #EDD3ED;     color: #000000;}
+.purple-itemBody_scoop {background-color: #EDD3ED      color: #000000;}
+.purple-itemText {}
+.purple-itemFoot       {background-color: #DAAADB;     color: #000000;}
+/********************************************************************/
+
+.red-item {}
+.red-itemHead       {background-color: #B21016;     color: #fff;}
+.red-itemInfo       {background-color: #F47378;     color: #000000;}
+.red-itemTitle a    {background-color: transparent; color: #FFFFFF;   }
+.red-itemBody       {background-color: #FBCFD0;     color: #000000;}
+.red-itemBody  td     {background-color: #FBCFD0;     color: #000000;}
+.red-itemBody_scoop {background-color: #FBCFD0 ;    color: #000000;}
+.red-itemText {}
+.red-itemFoot {    background-color: #F8A1A4 ;      color: #000000;}
+
+
+/********************************************************************/
+
+.saumon-item {}
+.saumon-itemHead       {background-color: #BF5B16;      color: #000000;}
+.saumon-itemInfo       {background-color: #FFB27D;      color: #000000;}
+.saumon-itemTitle a    {background-color: transparent;  color: #FFFFFF;}
+.saumon-itemBody       {background-color: #FFE5D4;      color: #000000;}
+.saumon-itemBody  td     {background-color: #FFE5D4;      color: #000000;}
+.saumon-itemBody_scoop {background-color: #FFE5D4;      color: #000000;}
+.saumon-itemText {}
+.saumon-itemFoot       {background-color: #FFCCA9;      color: #000000;}
+
+/********************************************************************/
+
+
+.yellow-item {}
+.yellow-itemHead       {background-color: #BFB500;      color: #fff;}
+.yellow-itemInfo       {background-color: #FFF766;      color: #000000;}
+.yellow-itemTitle a    {background-color: transparent;  color: #FFFFFF;   }
+.yellow-itemBody       {background-color: #FFFCCC;      color: #000000;}
+.yellow-itemBody   td    {background-color: #FFFCCC;      color: #000000;}
+.yellow-itemBody_scoop {background-color: #FFFCCC ;     color: #000000;}
+.yellow-itemText {}
+.yellow-itemFoot       {background-color: #FFFA99 ;     color: #000000;}
+
+
+/********************************************************************/
+/********************************************************************/

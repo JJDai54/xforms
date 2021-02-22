@@ -1,0 +1,12 @@
+{EHEADER}
+french
+{MSG}
+
+{UNAME}
+{ULINK}
+
+{IP}
+{AGENT}
+{FORMURL}
+
+{EFOOTER}

@@ -1,0 +1,348 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultDir=J:\_Contacts\Conseil Des Sages\Site Web\sages91.fr\web\modules\xforms
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+HTServer=localhost
+Extensions=*.*
+[Project tree]
+_xforms
+	+xforms
+		+admin
+			-elements
+				admin\elements\ele_checkbox.php
+				admin\elements\ele_chrono.php
+				admin\elements\ele_color.php
+				admin\elements\ele_country.php
+				admin\elements\ele_date.php
+				admin\elements\ele_email.php
+				admin\elements\ele_html.php
+				admin\elements\ele_number.php
+				admin\elements\ele_obfuscated.php
+				admin\elements\ele_pattern.php
+				admin\elements\ele_radio.php
+				admin\elements\ele_range.php
+				admin\elements\ele_select.php
+				admin\elements\ele_text.php
+				admin\elements\ele_textarea.php
+				admin\elements\ele_time.php
+				admin\elements\ele_timestamp.php
+				admin\elements\ele_upload.php
+				admin\elements\ele_uploadimg.php
+				admin\elements\ele_url.php
+				admin\elements\ele_yn.php
+				admin\elements\index.html
+			admin\about.php
+			admin\admin_footer.php
+			admin\admin_header.php
+			admin\contact.php
+			admin\contact-answer.php
+			admin\contact-delete.php
+			admin\contact-delete_ok.php
+			admin\contact-list.php
+			admin\contact-sendmail.php
+			admin\default_elements.php
+			admin\editelement.php
+			admin\elements.php
+			admin\file.php
+			admin\import.php
+			admin\index.php
+			admin\main.php
+			admin\menu.php
+			admin\report.php
+			admin\status.php
+			admin\contact-banish.php
+			admin\contact-banish_ok.php
+			admin\banish.php
+		-assets
+			-css
+				assets\css\index.html
+				assets\css\jquery-ui.min.css
+				assets\css\jquery-ui.structure.min.css
+				assets\css\jquery-ui.theme.min.css
+				assets\css\style.css
+				assets\css\style-item-color.css
+				assets\css\style-item-design.css
+			-images
+				-icons
+					-16
+						assets\images\icons\16\1day.png
+						assets\images\icons\16\active.gif
+						assets\images\icons\16\all.gif
+						assets\images\icons\16\blanck.gif
+						assets\images\icons\16\content.png
+						assets\images\icons\16\corbeille.png
+						assets\images\icons\16\delete.png
+						assets\images\icons\16\edit.png
+						assets\images\icons\16\editcopy.png
+						assets\images\icons\16\editcut.png
+						assets\images\icons\16\expired.gif
+						assets\images\icons\16\inactive.gif
+						assets\images\icons\16\index.html
+						assets\images\icons\16\mail_generic.png
+						assets\images\icons\16\noaction.gif
+						assets\images\icons\16\rpthor.png
+						assets\images\icons\16\rpthor0.png
+						assets\images\icons\16\rpthorizc.png
+						assets\images\icons\16\rptsee.png
+						assets\images\icons\16\rptvert.png
+						assets\images\icons\16\rptvert0.png
+						assets\images\icons\16\rptvertc.png
+						assets\images\icons\16\search.png
+						assets\images\icons\16\upcomming.gif
+						assets\images\icons\16\warning.png
+					-32
+						assets\images\icons\32\about.png
+						assets\images\icons\32\add.png
+						assets\images\icons\32\content.png
+						assets\images\icons\32\home.png
+						assets\images\icons\32\index.html
+						assets\images\icons\32\insert_table_row.png
+						assets\images\icons\32\manage.png
+					assets\images\icons\index.html
+					assets\images\icons\newred.gif
+					assets\images\icons\pop.gif
+					assets\images\icons\update.gif
+				assets\images\blank.gif
+				assets\images\brokenimg.png
+				assets\images\index.html
+				assets\images\logoModule.png
+				assets\images\ui-bg_glass_55_fbf9ee_1x400.png
+				assets\images\ui-bg_glass_65_ffffff_1x400.png
+				assets\images\ui-bg_glass_75_dadada_1x400.png
+				assets\images\ui-bg_glass_75_e6e6e6_1x400.png
+				assets\images\ui-bg_glass_95_fef1ec_1x400.png
+				assets\images\ui-bg_highlight-soft_75_cccccc_1x100.png
+				assets\images\ui-icons_222222_256x240.png
+				assets\images\ui-icons_2e83ff_256x240.png
+				assets\images\ui-icons_454545_256x240.png
+				assets\images\ui-icons_888888_256x240.png
+				assets\images\ui-icons_cd0a0a_256x240.png
+				assets\images\xforms.png
+			-js
+				assets\js\index.html
+				assets\js\modernizr-custom.js
+			assets\index.html
+		-blocks
+			blocks\form_block.php
+			blocks\index.html
+			blocks\list_block.php
+			blocks\menu-xbootstrap-block.php
+		+class
+			-Common
+				class\Common\Configurator.php
+				class\Common\FilesManagement.php
+				class\Common\index.html
+				class\Common\ServerStats.php
+				class\Common\VersionChecks.php
+			class\Banish.php
+			class\BanishHandler.php
+			class\Captcha.php
+			class\Constants.php
+			class\EfElement.php
+			class\EfElementHandler.php
+			class\EfForm.php
+			class\EfFormHandler.php
+			class\EfUserData.php
+			class\EfUserDataHandler.php
+			class\Element.php
+			class\ElementHandler.php
+			class\ElementRenderer.php
+			class\FormCaptcha.php
+			class\FormInput.php
+			class\FormRaw.php
+			class\Forms.php
+			class\FormsHandler.php
+			class\Helper.php
+			class\index.html
+			class\Issues.php
+			class\LiaiseElement.php
+			class\LiaiseElementHandler.php
+			class\LiaiseForm.php
+			class\LiaiseFormHandler.php
+			class\MediaUploader.php
+			class\UserData.php
+			class\UserDataHandler.php
+			class\UserForm.php
+			class\UserFormHandler.php
+			class\Utility.php
+		-docs
+			docs\changelog.txt
+			docs\credits.txt
+			docs\GitHub - zyspecxforms xForms is a module for XOOPS that offers widely customizable contact forms. xForms generates different.URL
+			docs\index.html
+			docs\install.txt
+			docs\lang_diff.txt
+			docs\license.txt
+			docs\readme.txt
+			docs\todo.txt
+		-include
+			-versions
+				include\versions\index.html
+				include\versions\version-200.php
+				include\versions\version-204.php
+				include\versions\version-205.php
+			include\common.php
+			include\config.php
+			include\form_render.php
+			include\functions.php
+			include\index.html
+			include\issues.php
+			include\oninstall.php
+			include\onuninstall.php
+			include\onupdate.php
+			include\onupdate-old.php
+			include\search.inc.php
+		+language
+			+english
+				-help
+					language\english\help\form_elements.tpl
+					language\english\help\help.tpl
+					language\english\help\import.tpl
+					language\english\help\index.html
+					language\english\help\issues.tpl
+					language\english\help\module_index.html
+				-mail_template
+					language\english\mail_template\index.html
+					language\english\mail_template\xforms.tpl
+					language\english\mail_template\xforms_copy.tpl
+					language\english\mail_template\xforms_pm.tpl
+				language\english\admin.php
+				language\english\blocks.php
+				language\english\common.php
+				language\english\index.html
+				language\english\main.php
+				language\english\modinfo.php
+			+french
+				-help
+					language\french\help\form_elements.tpl
+					language\french\help\help.tpl
+					language\french\help\import.tpl
+					language\french\help\index.html
+					language\french\help\issues.tpl
+					language\french\help\module_index.html
+				+mail_template
+					language\french\mail_template\index.html
+					language\french\mail_template\xforms.tpl
+					language\french\mail_template\xforms_copy.tpl
+					language\french\mail_template\xforms_pm.tpl
+				language\french\admin.php
+				language\french\blocks.php
+				language\french\common.php
+				language\french\index.html
+				language\french\main.php
+				language\french\modinfo.php
+			language\index.html
+		-preloads
+			preloads\autoloader.php
+			preloads\core.php
+			preloads\index.html
+		+sql
+			sql\.gitignore
+			sql\index.html
+			sql\mysql.sql
+		+templates
+			+admin
+				templates\admin\index.html
+				templates\admin\xforms_export_ch.tpl
+				templates\admin\xforms_export_cv.tpl
+				templates\admin\xforms_export_hh.tpl
+				templates\admin\xforms_export_hv.tpl
+			+blocks
+				templates\blocks\index.html
+				templates\blocks\xforms_blk_form.tpl
+				templates\blocks\xforms_blk_list.tpl
+				templates\blocks\xforms_blk_menu_xbootstrap.tpl
+			templates\index.html
+			templates\xforms_error.tpl
+			templates\xforms_form.tpl
+			templates\xforms_form_poll.tpl
+			templates\xforms_index.tpl
+		.gitattributes
+		.gitignore
+		.scrutinizer.yml
+		CONTRIBUTING.md
+		file.php
+		header.php
+		index.php
+		LICENSE
+		README.md
+		xoops_version.php
+[Open project files]
+0=admin\main.php
+1=index.php
+2=include\functions.php
+3=admin\contact.php
+4=admin\contact-list.php
+5=admin\banish.php
+6=language\french\admin.php
+7=language\english\admin.php
+8=sql\mysql.sql
+9=class\Forms.php
+10=class\BanishHandler.php
+11=admin\contact-answer.php
+12=admin\contact-delete_ok.php
+13=admin\contact-delete.php
+14=admin\contact-banish_ok.php
+15=admin\index.php
+[Selected Project Files]
+Main=
+Selected=admin\index.php
+[admin\main.php]
+TopLine=131
+Caret=1,1
+[index.php]
+TopLine=165
+Caret=10,182
+[include\functions.php]
+TopLine=373
+Caret=13,399
+[admin\contact.php]
+TopLine=66
+Caret=1,94
+[admin\contact-list.php]
+TopLine=81
+Caret=1,100
+Mark1=1,78
+[admin\banish.php]
+TopLine=105
+Caret=1,123
+[language\french\admin.php]
+TopLine=367
+Caret=46,384
+[language\english\admin.php]
+TopLine=377
+Caret=1,377
+[sql\mysql.sql]
+TopLine=15
+Caret=27,50
+[class\Forms.php]
+TopLine=138
+Caret=1,138
+[class\BanishHandler.php]
+TopLine=63
+Caret=5,67
+[admin\contact-answer.php]
+TopLine=5
+Caret=1,25
+[admin\contact-delete_ok.php]
+TopLine=6
+Caret=40,24
+[admin\contact-delete.php]
+TopLine=46
+Caret=1,74
+[admin\contact-banish_ok.php]
+TopLine=1
+Caret=35,21
+[admin\index.php]
+TopLine=15
+Caret=27,62

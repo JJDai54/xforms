@@ -1,0 +1,105 @@
+
+.item {
+    border: 0px solid #666;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.itemHead {
+    padding: 3px;
+    background-color: #808080;
+    color: #fff;
+  -moz-border-radius: 8px 8px 0px 0px;
+  -webkit-border-radius: 8px 8px 0px 0px;
+  -khtml-border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
+
+    text-align:center;
+}
+
+.itemInfo {
+    text-align: center;
+    padding: 3px;
+    background-color: #BFBFBF;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+
+}
+
+.itemTitle a {
+    font-size: 0.80em;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: #fff;
+    background-color: transparent;
+
+}
+
+.itemPoster {
+    font-size: .9em;
+    font-style: italic;
+}
+
+.itemPostDate {
+    font-size: .9em;
+    font-style: italic;
+}
+
+.itemStats {
+    font-size: .9em;
+    font-style: italic;
+}
+
+.itemBody {
+    padding-left: 5px;
+    background-color: #F2F2F2;
+    border: 0px solid;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    padding:12px;
+}
+.itemBody_scoop {
+    padding-left: 5px;
+    background-color: #F2F2F2;
+    border: 0px solid;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    padding:12px;
+}
+
+.itemText {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.5em;
+}
+
+.itemText:first-letter {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.itemFoot {
+    text-align: right;
+    padding: 3px;
+    background-color: #D9D9D9;
+    border: 0px solid;
+  -moz-border-radius: 0px 0px 8px 8px;
+  -webkit-border-radius: 0px 0px 8px 8px;
+  -khtml-border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.itemAdminLink {
+    font-size: .9em;
+}
+
+.itemPermaLink {
+    font-size: .9em;
+}
+
+

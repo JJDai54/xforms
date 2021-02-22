@@ -1,0 +1,19 @@
+ALTER TABLE `x251_xforms_userform` ADD `uform_chrono` VARCHAR(50) NOT NULL AFTER `uform_email`;
+
+
+
+
+ if (isset($data[$formEleId])){
+    = $data[$formEleId];
+ }else{
+ }
+
+
+
+
+ if (isset($data[$formEleId])){
+    = $data[$formEleId];
+ }
+
+ajouter le champ
+ALTER TABLE `x251_xforms_form` ADD `form_color_set` VARCHAR(50) NOT NULL AFTER `form_display_style`;

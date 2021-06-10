@@ -49,8 +49,8 @@ use XoopsModules\Xforms;
            . '    <td class="head center bottom width5">' . _AM_XFORMS_NO . '</td>'
            . '    <td class="head center bottom">' . _AM_XFORMS_TITLE . '</td>'
            . '    <td class="head center bottom width10">' . _AM_XFORMS_CHRONO . '</td>'
-           . '    <td class="head center bottom width10">' . _AM_XFORMS_USER . '</td>'
-           . '    <td class="head center bottom width10">' . _AM_XFORMS_EMAIL . '</td>'
+           . '    <td class="head center bottom width20">' . _AM_XFORMS_USER . '</td>'
+           . '    <td class="head center bottom width20">' . _AM_XFORMS_EMAIL . '</td>'
            . '    <td class="head center bottom width20">' . _AM_XFORMS_OBJECT . '</td>'
            . '    <td class="head center bottom width10">' . _AM_XFORMS_STATUS  . '</td>'
            . '    <td class="head center bottom width10">' . _AM_XFORMS_ACTION . '</td>'
@@ -66,7 +66,6 @@ use XoopsModules\Xforms;
 
 
  //echo "===>forms<pre>" . print_r($forms, true) . "</pre>";
-    $banishHandler = $helper::getInstance()->getHandler('banish');
 
       //------------------------------------------------------------------------------
       $criteria = new \CriteriaCompo();
@@ -74,22 +73,16 @@ use XoopsModules\Xforms;
       if ($formId > 0) $criteria->add(new \Criteria('form_id', $formId, '='));
 
       $criteria->setSort('uform_id','DESC');
-      $criteria->setOrder('DESC');
+      $criteria->setORDER('DESC');
       $uFormHandler = $helper->getHandler('UserForm');
       $uForms = $uFormHandler->getAll($criteria);
       //$criteria->setGroupBy('uform_id');
-      
-      $ligne  = '';
+
       $h = 0;
       foreach ($uForms as $id=>$uForm){
-          $email = $uForm->getVar('uform_email');
-          $isBanish = $banishHandler->is_banish(trim($email), false);
-          $color = $isBanish ? 'red': 'black';
-                    
           $h = ($h +1) % 2;
-          //$ligne= ($h==0) ? 'odd' : 'even';
-          $ligne  = ($ligne == "odd") ? 'even': 'odd';
-          echo "  <tr class='{$ligne}'  style='height:10px;color:{$color};'>";
+          $ligne= ($h==0) ? 'odd' : 'even';
+          echo "  <tr class='{$ligne}'  style='height:10px;'>";
 //          echo '    <td class="odd center">' . $id . '</td>';
           echo "    <td class='{$ligne} center'>" .  $uForm->getVar('uform_id') . '</td>';
           echo "    <td class='{$ligne} left'>"   .  $forms[$uForm->getVar('form_id')] . '</td>';
@@ -97,14 +90,11 @@ use XoopsModules\Xforms;
 
           echo "    <td class='{$ligne} left'>"   .  $uForm->getVar('uform_chrono') .'</td>';
           echo "    <td class='{$ligne} left'>"   .  $uForm->getVar('uform_user') .'</td>';
-          echo "    <td class='{$ligne} left'>" .  $uForm->getVar('uform_email') .'</td>';
+          echo "    <td class='{$ligne} left'>"   .  $uForm->getVar('uform_email') .'</td>';
 
           $object = $uForm->getVar('uform_object');
-          if (strlen($object)> 36){
-            //JJDai affiche jusqu'au premier espace trouvé apres ## caracteres
-            $h= stripos($object, " ", 36);  
-            if ($h > 0){$object = substr($object, 0, $h) . "...";}
-          }
+          $h= stripos($object, " ", 36);  //JJDai affiche jusqu'au premier espace trouvé apres ## caracteres
+          if ($h > 0){$object = substr($object, 0, $h) . "...";}
           echo "    <td class='{$ligne} left'>"   . $object .'</td>';
 
           if ($uForm->getVar('uform_status') == 0){
@@ -144,22 +134,9 @@ use XoopsModules\Xforms;
           $img = \Xmf\Module\Admin::iconUrl('delete.png', '16');
           $title = _AM_XFORMS_ACTION_DELETE_MAIL;
           $actionDelete = "<a href='{$link}'><img src='{$img}'  title='{$title}' alt='{$title}'></A>";
-          
-          // ---------- banish -------------------
-          if ($isBanish){
-                $img = \Xmf\Module\Admin::iconUrl('mail_delete.png', '16');
-                $action="unbanish";
-                $title = _AM_XFORMS_ACTION_UNBANISH_MAIL;
-          }else{
-                $img = \Xmf\Module\Admin::iconUrl('mail_forward.png', '16');
-                $action="banish";
-                $title = _AM_XFORMS_ACTION_BANISH_MAIL;
-          }
-          $link = "contact.php?op=banish&form_id={$uForm->getVar('form_id')}&uform_id={$uForm->getVar('uform_id')}&email={$email}&action={$action}";
-          $actionBanish = "<a href='{$link}'><img src='{$img}'  title='{$title}' alt='{$title}'></A>";
 
 
-          echo "    <td class='odd center'>{$actionView}&nbsp;{$actionMail}&nbsp;{$actionDelete}&nbsp;{$actionBanish}</td>";
+          echo "    <td class='odd center'>{$actionView}&nbsp;{$actionMail}&nbsp;{$actionDelete}</td>";
 
           echo '  </tr>';
 

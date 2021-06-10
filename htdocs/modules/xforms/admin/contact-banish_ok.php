@@ -18,10 +18,10 @@ if ($ok == 1){
     $banishHandler = $helper::getInstance()->getHandler('banish');
     
     if ($action == 'banish'){
-        $banishHandler->add_banish($email);
+        $banishHandler->add_banish(trim($email));
         $msg = sprintf(_AM_XFORMS_UFORM_BANISH_OK, $email);
     }else{
-        $banishHandler->remove_banish($email);
+        $banishHandler->remove_banish(trim($email));
         $msg = sprintf(_AM_XFORMS_UFORM_UNBANISH_OK, $email);
     }
 

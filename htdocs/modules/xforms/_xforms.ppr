@@ -5,7 +5,7 @@ Compilator.CompileOnBackground=0
 Compilator.ProgSaveAll=0
 Compilator.ProgRunSelection=0
 Compilator.LogType=0
-DefaultDir=J:\_Contacts\Conseil Des Sages\Site Web\sages91.fr\web\modules\xforms
+DefaultDir=J:\_Contacts\Conseil Des Sages\Site Web\sages91.fr\WEB Site Principal\web\modules\xforms
 DefaultCP=0
 LogtoEnd=1
 DontOpen=0
@@ -44,8 +44,13 @@ _xforms
 			admin\about.php
 			admin\admin_footer.php
 			admin\admin_header.php
+			admin\banish.php
 			admin\contact.php
+			admin\contact-answer.~php
 			admin\contact-answer.php
+			admin\contact-banish.php
+			admin\contact-banish_ok.php
+			admin\contact-delete.~php
 			admin\contact-delete.php
 			admin\contact-delete_ok.php
 			admin\contact-list.php
@@ -60,9 +65,6 @@ _xforms
 			admin\menu.php
 			admin\report.php
 			admin\status.php
-			admin\contact-banish.php
-			admin\contact-banish_ok.php
-			admin\banish.php
 		-assets
 			-css
 				assets\css\index.html
@@ -137,7 +139,7 @@ _xforms
 			blocks\index.html
 			blocks\list_block.php
 			blocks\menu-xbootstrap-block.php
-		+class
+		-class
 			-Common
 				class\Common\Configurator.php
 				class\Common\FilesManagement.php
@@ -156,6 +158,7 @@ _xforms
 			class\EfUserDataHandler.php
 			class\Element.php
 			class\ElementHandler.php
+			class\ElementRenderer.~php
 			class\ElementRenderer.php
 			class\FormCaptcha.php
 			class\FormInput.php
@@ -172,10 +175,13 @@ _xforms
 			class\MediaUploader.php
 			class\UserData.php
 			class\UserDataHandler.php
+			class\UserForm.~php
 			class\UserForm.php
+			class\UserFormHandler.~php
 			class\UserFormHandler.php
 			class\Utility.php
 		-docs
+			docs\changelog.~txt
 			docs\changelog.txt
 			docs\credits.txt
 			docs\GitHub - zyspecxforms xForms is a module for XOOPS that offers widely customizable contact forms. xForms generates different.URL
@@ -184,16 +190,19 @@ _xforms
 			docs\lang_diff.txt
 			docs\license.txt
 			docs\readme.txt
+			docs\todo.~txt
 			docs\todo.txt
 		-include
 			-versions
 				include\versions\index.html
 				include\versions\version-200.php
 				include\versions\version-204.php
+				include\versions\version-205.~php
 				include\versions\version-205.php
 			include\common.php
 			include\config.php
 			include\form_render.php
+			include\functions.~php
 			include\functions.php
 			include\index.html
 			include\issues.php
@@ -202,8 +211,8 @@ _xforms
 			include\onupdate.php
 			include\onupdate-old.php
 			include\search.inc.php
-		+language
-			+english
+		-language
+			-english
 				-help
 					language\english\help\form_elements.tpl
 					language\english\help\help.tpl
@@ -216,13 +225,14 @@ _xforms
 					language\english\mail_template\xforms.tpl
 					language\english\mail_template\xforms_copy.tpl
 					language\english\mail_template\xforms_pm.tpl
+				language\english\admin.~php
 				language\english\admin.php
 				language\english\blocks.php
 				language\english\common.php
-				language\english\index.html
 				language\english\main.php
+				language\english\modinfo.~php
 				language\english\modinfo.php
-			+french
+			-french
 				-help
 					language\french\help\form_elements.tpl
 					language\french\help\help.tpl
@@ -230,34 +240,38 @@ _xforms
 					language\french\help\index.html
 					language\french\help\issues.tpl
 					language\french\help\module_index.html
-				+mail_template
+				-mail_template
 					language\french\mail_template\index.html
 					language\french\mail_template\xforms.tpl
 					language\french\mail_template\xforms_copy.tpl
 					language\french\mail_template\xforms_pm.tpl
+				language\french\admin.~php
 				language\french\admin.php
 				language\french\blocks.php
 				language\french\common.php
-				language\french\index.html
 				language\french\main.php
+				language\french\modinfo.~php
 				language\french\modinfo.php
-			language\index.html
 		-preloads
 			preloads\autoloader.php
 			preloads\core.php
 			preloads\index.html
-		+sql
+		-sql
 			sql\.gitignore
 			sql\index.html
+			sql\MPD-01.mwb
+			sql\MPD-01.mwb.bak
+			sql\MPD-01.pdf
+			sql\mysql.~sql
 			sql\mysql.sql
-		+templates
-			+admin
+		-templates
+			-admin
 				templates\admin\index.html
 				templates\admin\xforms_export_ch.tpl
 				templates\admin\xforms_export_cv.tpl
 				templates\admin\xforms_export_hh.tpl
 				templates\admin\xforms_export_hv.tpl
-			+blocks
+			-blocks
 				templates\blocks\index.html
 				templates\blocks\xforms_blk_form.tpl
 				templates\blocks\xforms_blk_list.tpl
@@ -270,79 +284,34 @@ _xforms
 		.gitattributes
 		.gitignore
 		.scrutinizer.yml
+		_xforms.ppr
+		commissions.txt
 		CONTRIBUTING.md
 		file.php
 		header.php
+		index.~php
 		index.php
 		LICENSE
 		README.md
+		xoops_version.~php
 		xoops_version.php
 [Open project files]
-0=admin\main.php
-1=index.php
-2=include\functions.php
-3=admin\contact.php
-4=admin\contact-list.php
-5=admin\banish.php
-6=language\french\admin.php
-7=language\english\admin.php
-8=sql\mysql.sql
-9=class\Forms.php
-10=class\BanishHandler.php
-11=admin\contact-answer.php
-12=admin\contact-delete_ok.php
-13=admin\contact-delete.php
-14=admin\contact-banish_ok.php
-15=admin\index.php
+0=admin\contact-banish.php
+1=admin\contact-banish_ok.php
+2=sql\mysql.sql
+3=admin\contact-list.php
 [Selected Project Files]
 Main=
-Selected=admin\index.php
-[admin\main.php]
-TopLine=131
-Caret=1,1
-[index.php]
-TopLine=165
-Caret=10,182
-[include\functions.php]
-TopLine=373
-Caret=13,399
-[admin\contact.php]
-TopLine=66
-Caret=1,94
-[admin\contact-list.php]
-TopLine=81
-Caret=1,100
-Mark1=1,78
-[admin\banish.php]
-TopLine=105
-Caret=1,123
-[language\french\admin.php]
-TopLine=367
-Caret=46,384
-[language\english\admin.php]
-TopLine=377
-Caret=1,377
-[sql\mysql.sql]
-TopLine=15
-Caret=27,50
-[class\Forms.php]
-TopLine=138
-Caret=1,138
-[class\BanishHandler.php]
-TopLine=63
-Caret=5,67
-[admin\contact-answer.php]
-TopLine=5
-Caret=1,25
-[admin\contact-delete_ok.php]
+Selected=admin\contact-banish_ok.php
+[admin\contact-banish.php]
 TopLine=6
-Caret=40,24
-[admin\contact-delete.php]
-TopLine=46
-Caret=1,74
+Caret=1,33
 [admin\contact-banish_ok.php]
-TopLine=1
-Caret=35,21
-[admin\index.php]
-TopLine=15
-Caret=27,62
+TopLine=4
+Caret=49,21
+[sql\mysql.sql]
+TopLine=48
+Caret=19,75
+[admin\contact-list.php]
+TopLine=74
+Caret=53,86

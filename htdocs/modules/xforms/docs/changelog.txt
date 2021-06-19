@@ -4,7 +4,12 @@
 - Remplacement de la fonction "date" par "strftime" afin de formater les dates du formulaire selon la langue du site.
 - Ajout de l'attribut "type de contenu" à l'élément texte (valeur, 0:nd 1:email 2 :user 3:objet)
   si le type est défini le contenu est reporté dans la table uform pour faciliter la gestion de l'affichage et des réponses
-
+- Separtion du code html et du code php dans les pages avec création de template dans la partie admin:
+    contact-list.php
+    banish.php
+    form-list.php
+- renomage de "main.php" en "forms.php" 
+- cosmetique sur la page "forms-list.php"  
  
 2.09 ALpha 1 (JJDai) 2020-03-30a
 - Ajout de l'élément "chrono" avec incrémentation automatique

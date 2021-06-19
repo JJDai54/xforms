@@ -30,6 +30,8 @@ require_once  '../include/functions.php';
 // require_once  'status.php';
 // 
 // $myts = \MyTextSanitizer::getInstance();
+$templateMain = 'admin/xforms_banish-list.tpl';
+$GLOBALS['xoopsOption']['template_main'] =  $templateMain;   
 
 $op        = Request::getCmd('op', 'list', 'REQUEST');
 
@@ -81,20 +83,6 @@ $banish_id = Request::getInt('banish_id', 0, 'REQUEST');
         $adminObject->displayButton('left');
         $tHtml = array();
 //======================================================================
-        // ---------- Liste des emails bannis
-        $tHtml[] =  '<form action="banish.php?op=list" method="post">';
-        $tHtml[] = '<table class="outer width100 bspacing1">';
-        $tHtml[] = '  <thead>';
-        $tHtml[] = '  <tr><th colspan="7">' . _AM_XFORMS_BANISH_LIST . '</th></tr>';
-        $tHtml[] = '  <tr>';
-        $tHtml[] = '    <td class="head center bottom width10">' . _AM_XFORMS_ID . '</td>';
-        $tHtml[] = '    <td class="head center bottom width10">' . _AM_XFORMS_EMAIL . '</td>';
-        $tHtml[] = '    <td class="head center bottom width10">' . _AM_XFORMS_ATTEMPTS  . '</td>';        
-        $tHtml[] = '    <td class="head center bottom width20">' . _AM_XFORMS_LAST_UPDATE  . '</td>';        
-        $tHtml[] = '    <td class="head center bottom width10">' . _AM_XFORMS_ACTION . '</td>';
-        $tHtml[] = '  </tr>';
-        $tHtml[] = '  </thead>';
-        $tHtml[] = '  <tbody>';
       //------------------------------------------------------------------------------
       $class = "";  
       //$rstBanish = $banishHandler->getAll($criteria=null, "banish_email", false, true);
@@ -106,39 +94,42 @@ $banish_id = Request::getInt('banish_id', 0, 'REQUEST');
       
       $rstBanish = $banishHandler->getAll($criteria);
       //echo "<pre>" . print_r($rstBanish, true) . "</pre>";  
-    
+      $ligne='';
+      $allBanish = array();  
       foreach ($rstBanish as $banish_id=>$banish){
-      //echo "<pre>" . print_r($banish, true) . "</pre>";
-
-          $class  = ($class == "odd") ? 'even': 'odd';
+          $item = array();
+          $ligne  = ($ligne == "odd") ? 'even': 'odd';
+          $item['ligne'] = $ligne;
+          $item['extra'] = "style='height:10px;'";
           
-          $tHtml[] = "  <tr class='{$class}'  style='height:10px;'>" ;
-         
-          $tHtml[] = "    <td class='{$class} center'>" .  $banish->getVar('banish_id') . '</td>';          
-          $tHtml[] = "    <td class='{$class} left'>"   .  $banish->getVar('banish_email') .'</td>';
-          $tHtml[] = "    <td class='{$class} center'>"  .  $banish->getVar('banish_attempts') .'</td>';
-          //$tHtml[] = "    <td class='{$class} center'>"   .  date("Y-m-d H:i:s", $banish->getVar('banish_update'))   .'</td>';
-          $tHtml[] = "    <td class='{$class} center'>"   .  date("Y-m-d H:i:s", $banish->getVar('banish_update'))   .'</td>'; 
+        
+        //--------------------------------
+        
+      //echo "<pre>" . print_r($item, true) . "</pre>";
 
+          $item['id'] = $banish->getVar('banish_id');
+          $item['email'] = $banish->getVar('banish_email');
+          $item['attempts'] = $banish->getVar('banish_attempts');
+          $item['date_update'] = date("Y-m-d H:i:s", $banish->getVar('banish_update'));
+          
           //------ Boutons d'actions --------------------------------------
 
           $link = "banish.php?op=delete&banish_id={$banish->getVar('banish_id')}";
           $img = \Xmf\Module\Admin::iconUrl('delete.png', '16');
           $title = _AM_XFORMS_ACTION_DELETE;
           $actionDelete= "<a href='{$link}'><img src='{$img}'  title='{$title}' alt='{$title}'></a>";
-          $tHtml[] = "    <td class='{$class} center'>"  .  $actionDelete .'</td>';
- 
+
+          $item['delete'] = $actionDelete;
  
           
-          $tHtml[] = "  </tr>" ;
+        //--------------------------------
+        $allBanish[] = $item;
           
 
-        }
-
+     }
+     $GLOBALS['xoopsTpl']->assign('allBanish', $allBanish);
         //---------------------------------------------------------------
-        $tHtml[] =   '</table></form>';
-        $html = implode("\n", $tHtml);
-        echo $html;
+
         break;
         
     }        

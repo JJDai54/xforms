@@ -12,12 +12,11 @@ DontOpen=0
 AbsolutePath=0
 FileFormat=0
 ProjectFilesOnly=0
-HTServer=localhost
 Extensions=*.*
 [Project tree]
-_xforms
-	+xforms
-		+admin
+xforms
+	-xforms
+		-admin
 			-elements
 				admin\elements\ele_checkbox.php
 				admin\elements\ele_chrono.php
@@ -46,11 +45,9 @@ _xforms
 			admin\admin_header.php
 			admin\banish.php
 			admin\contact.php
-			admin\contact-answer.~php
 			admin\contact-answer.php
 			admin\contact-banish.php
 			admin\contact-banish_ok.php
-			admin\contact-delete.~php
 			admin\contact-delete.php
 			admin\contact-delete_ok.php
 			admin\contact-list.php
@@ -59,9 +56,17 @@ _xforms
 			admin\editelement.php
 			admin\elements.php
 			admin\file.php
+			admin\forms.php
+			admin\forms-active.php
+			admin\forms-delete.php
+			admin\forms-edit.php
+			admin\forms-inactive.php
+			admin\forms-list.php
+			admin\forms-saveform.php
+			admin\forms-saveorder.php
+			admin\forms-status.php
 			admin\import.php
 			admin\index.php
-			admin\main.php
 			admin\menu.php
 			admin\report.php
 			admin\status.php
@@ -158,7 +163,6 @@ _xforms
 			class\EfUserDataHandler.php
 			class\Element.php
 			class\ElementHandler.php
-			class\ElementRenderer.~php
 			class\ElementRenderer.php
 			class\FormCaptcha.php
 			class\FormInput.php
@@ -175,13 +179,10 @@ _xforms
 			class\MediaUploader.php
 			class\UserData.php
 			class\UserDataHandler.php
-			class\UserForm.~php
 			class\UserForm.php
-			class\UserFormHandler.~php
 			class\UserFormHandler.php
 			class\Utility.php
 		-docs
-			docs\changelog.~txt
 			docs\changelog.txt
 			docs\credits.txt
 			docs\GitHub - zyspecxforms xForms is a module for XOOPS that offers widely customizable contact forms. xForms generates different.URL
@@ -190,19 +191,16 @@ _xforms
 			docs\lang_diff.txt
 			docs\license.txt
 			docs\readme.txt
-			docs\todo.~txt
 			docs\todo.txt
 		-include
 			-versions
 				include\versions\index.html
 				include\versions\version-200.php
 				include\versions\version-204.php
-				include\versions\version-205.~php
 				include\versions\version-205.php
 			include\common.php
 			include\config.php
 			include\form_render.php
-			include\functions.~php
 			include\functions.php
 			include\index.html
 			include\issues.php
@@ -225,12 +223,10 @@ _xforms
 					language\english\mail_template\xforms.tpl
 					language\english\mail_template\xforms_copy.tpl
 					language\english\mail_template\xforms_pm.tpl
-				language\english\admin.~php
 				language\english\admin.php
 				language\english\blocks.php
 				language\english\common.php
 				language\english\main.php
-				language\english\modinfo.~php
 				language\english\modinfo.php
 			-french
 				-help
@@ -245,12 +241,10 @@ _xforms
 					language\french\mail_template\xforms.tpl
 					language\french\mail_template\xforms_copy.tpl
 					language\french\mail_template\xforms_pm.tpl
-				language\french\admin.~php
 				language\french\admin.php
 				language\french\blocks.php
 				language\french\common.php
 				language\french\main.php
-				language\french\modinfo.~php
 				language\french\modinfo.php
 		-preloads
 			preloads\autoloader.php
@@ -262,15 +256,18 @@ _xforms
 			sql\MPD-01.mwb
 			sql\MPD-01.mwb.bak
 			sql\MPD-01.pdf
-			sql\mysql.~sql
 			sql\mysql.sql
 		-templates
 			-admin
 				templates\admin\index.html
+				templates\admin\xforms_about.tpl
+				templates\admin\xforms_banish-list.tpl
+				templates\admin\xforms_contact-list.tpl
 				templates\admin\xforms_export_ch.tpl
 				templates\admin\xforms_export_cv.tpl
 				templates\admin\xforms_export_hh.tpl
 				templates\admin\xforms_export_hv.tpl
+				templates\admin\xforms_forms-list.tpl
 			-blocks
 				templates\blocks\index.html
 				templates\blocks\xforms_blk_form.tpl
@@ -281,37 +278,14 @@ _xforms
 			templates\xforms_form.tpl
 			templates\xforms_form_poll.tpl
 			templates\xforms_index.tpl
-		.gitattributes
-		.gitignore
-		.scrutinizer.yml
 		_xforms.ppr
-		commissions.txt
 		CONTRIBUTING.md
 		file.php
 		header.php
-		index.~php
 		index.php
 		LICENSE
 		README.md
-		xoops_version.~php
 		xoops_version.php
 [Open project files]
-0=admin\contact-banish.php
-1=admin\contact-banish_ok.php
-2=sql\mysql.sql
-3=admin\contact-list.php
 [Selected Project Files]
 Main=
-Selected=admin\contact-banish_ok.php
-[admin\contact-banish.php]
-TopLine=6
-Caret=1,33
-[admin\contact-banish_ok.php]
-TopLine=4
-Caret=49,21
-[sql\mysql.sql]
-TopLine=48
-Caret=19,75
-[admin\contact-list.php]
-TopLine=74
-Caret=53,86

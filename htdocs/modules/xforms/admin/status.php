@@ -81,9 +81,9 @@ function getCritereStatus($status){
 /*******************************************************
  *
  *******************************************************/
-function getBtnStatus($to){
+function getBtnStatus($to, $msg = ''){
 global $mypathIcon16;
-    $url = $to . ".php?status=";
+    $url = $to . ".php?op=list&selectStatus=";
     $btn =  '<fieldset><legend class="bold" style="color: #900;">' . _AM_XFORMS_STATUS_INFORMATION . '</legend>'
        . '<div class="pad7">'
        . '  <div class="center">'
@@ -103,6 +103,7 @@ global $mypathIcon16;
        . '    <img src="' . $mypathIcon16 . '/expired.gif" style="margin-right: .5em;">' . _AM_XFORMS_STATUS_EXPIRED
        . "</a>"
        . '  </div>'
+       . (($msg != '') ? "<br><center>{$msg}</center>" : '')
        . '</div>'
        . '</fieldset>';
 

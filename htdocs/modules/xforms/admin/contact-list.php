@@ -1,7 +1,9 @@
 <?php
 
 use XoopsModules\Xforms;
-
+$templateMain = 'admin/xforms_contact-list.tpl';
+$GLOBALS['xoopsOption']['template_main'] =  $templateMain;   
+     
         xoops_cp_header();
         /* @var \Xmf\Module\Admin $adminObject */
         $adminObject->displayNavigation(basename(__FILE__));
@@ -10,7 +12,7 @@ use XoopsModules\Xforms;
 
 
         // ---------- Liste des fomulaire de contact
-        echo '<form action="contact.php?op=list" method="post">';
+
         $criteria = new \CriteriaCompo();
         $criteria->add(new \Criteria('form_answer', 1, '='));
         $forms = $formsHandler->getList($criteria, "form_id,form_title", false, true);
@@ -21,8 +23,7 @@ use XoopsModules\Xforms;
         foreach($forms as $id=>$title){
              $selectForm->addOption($id, $title);
         }
-        echo _AM_XFORMS_LISTING_CONTACT . " : " . $selectForm->render();
-        echo '</form>';
+        $GLOBALS['xoopsTpl']->assign('selectForm', $selectForm->render());
         //---------------------------------------------------------------
 
 
@@ -41,28 +42,6 @@ use XoopsModules\Xforms;
 
         Xforms\load_css();
 
-        //echo '<form action="' . basename(__FILE__) . '" method="post">';
-        echo '<table class="outer width100 bspacing1">'
-           . '  <thead>'
-           . '  <tr><th colspan="7">' . _AM_XFORMS_LISTING . '</th></tr>'
-           . '  <tr>'
-           . '    <td class="head center bottom width5">' . _AM_XFORMS_NO . '</td>'
-           . '    <td class="head center bottom">' . _AM_XFORMS_TITLE . '</td>'
-           . '    <td class="head center bottom width10">' . _AM_XFORMS_CHRONO . '</td>'
-           . '    <td class="head center bottom width10">' . _AM_XFORMS_USER . '</td>'
-           . '    <td class="head center bottom width10">' . _AM_XFORMS_EMAIL . '</td>'
-           . '    <td class="head center bottom width20">' . _AM_XFORMS_OBJECT . '</td>'
-           . '    <td class="head center bottom width10">' . _AM_XFORMS_STATUS  . '</td>'
-           . '    <td class="head center bottom width10">' . _AM_XFORMS_ACTION . '</td>'
-           . '  </tr>'
-           . '  </thead>'
-           . '  <tbody>';
-      //------------------------------------------------------------------------------
-
-//       $criteria = new \CriteriaCompo();
-//       $criteria->add(new \Criteria('form_answer', 1, '='));
-//
-//       $forms = $formsHandler->getList($criteria, "form_id,form_title", false, true);
 
 
  //echo "===>forms<pre>" . print_r($forms, true) . "</pre>";
@@ -80,32 +59,37 @@ use XoopsModules\Xforms;
       //$criteria->setGroupBy('uform_id');
       
       $ligne  = '';
-      $h = 0;
+      $messages = array();
+ 
       foreach ($uForms as $id=>$uForm){
-          $email = $uForm->getVar('uform_email');
-          $isBanish = $banishHandler->is_banish(trim($email), false);
-          $color = $isBanish ? 'red': 'black';
-                    
-          $h = ($h +1) % 2;
-          //$ligne= ($h==0) ? 'odd' : 'even';
+          $message = array();
+          $message['uform_id'] = $uForm->getVar('uform_id');
+          $message['form_id'] = $uForm->getVar('form_id');
+          $message['form_name'] = $forms[$uForm->getVar('form_id')]; 
+          
+          $message['chrono'] = $uForm->getVar('uform_chrono');
+          $message['user'] = $uForm->getVar('uform_user');
+
+
+          
+          $message['email'] = $uForm->getVar('uform_email');      
+          //$email = $uForm->getVar('uform_email');      
+          $message['isBanish'] = $banishHandler->is_banish(trim($message['email']), false);      
+          //$isBanish = $banishHandler->is_banish(trim($email), false);      
+          $message['color'] = $message['isBanish'] ? 'red': 'black';      
+          //$color = $message['isBanish'] ? 'red': 'black';      
+
           $ligne  = ($ligne == "odd") ? 'even': 'odd';
-          echo "  <tr class='{$ligne}'  style='height:10px;color:{$color};'>";
-//          echo '    <td class="odd center">' . $id . '</td>';
-          echo "    <td class='{$ligne} center'>" .  $uForm->getVar('uform_id') . '</td>';
-          echo "    <td class='{$ligne} left'>"   .  $forms[$uForm->getVar('form_id')] . '</td>';
-
-
-          echo "    <td class='{$ligne} left'>"   .  $uForm->getVar('uform_chrono') .'</td>';
-          echo "    <td class='{$ligne} left'>"   .  $uForm->getVar('uform_user') .'</td>';
-          echo "    <td class='{$ligne} left'>" .  $uForm->getVar('uform_email') .'</td>';
+          $message['ligne'] = $ligne;      
+          //$message['color'] = $color;      
 
           $object = $uForm->getVar('uform_object');
-          if (strlen($object)> 36){
+          if (strlen($object) > 36){
             //JJDai affiche jusqu'au premier espace trouvé apres ## caracteres
             $h= stripos($object, " ", 36);  
             if ($h > 0){$object = substr($object, 0, $h) . "...";}
           }
-          echo "    <td class='{$ligne} left'>"   . $object .'</td>';
+          $message['object'] = $object;
 
           if ($uForm->getVar('uform_status') == 0){
             $status = "<span style='color:red;'>" . _AM_XFORMS_STATUS_WAITING . "</span>";
@@ -113,7 +97,8 @@ use XoopsModules\Xforms;
             $status = "<span style='color:green;'>" . $uForm->getVar('uform_status') . " " . _AM_XFORMS_STATUS_ANSWERS . "</span>";
           }
           //echo "    <td class='{$ligne} center'>" .  $uForm->getVar('uform_status') .'</td>';
-          echo "    <td class='{$ligne} center'>" . $status  .'</td>';
+          $message['status'] = $status;
+          
 
           //------ Boutons d'actions --------------------------------------
 
@@ -146,7 +131,7 @@ use XoopsModules\Xforms;
           $actionDelete = "<a href='{$link}'><img src='{$img}'  title='{$title}' alt='{$title}'></A>";
           
           // ---------- banish -------------------
-          if ($isBanish){
+          if ($message['isBanish']){
                 $img = \Xmf\Module\Admin::iconUrl('mail_delete.png', '16');
                 $action="unbanish";
                 $title = _AM_XFORMS_ACTION_UNBANISH_MAIL;
@@ -155,19 +140,19 @@ use XoopsModules\Xforms;
                 $action="banish";
                 $title = _AM_XFORMS_ACTION_BANISH_MAIL;
           }
-          $link = "contact.php?op=banish&form_id={$uForm->getVar('form_id')}&uform_id={$uForm->getVar('uform_id')}&email={$email}&action={$action}";
+          $link = "contact.php?op=banish&form_id={$uForm->getVar('form_id')}&uform_id={$uForm->getVar('uform_id')}&email={$message['email']}&action={$action}";
           $actionBanish = "<a href='{$link}'><img src='{$img}'  title='{$title}' alt='{$title}'></A>";
 
-
-          echo "    <td class='odd center'>{$actionView}&nbsp;{$actionMail}&nbsp;{$actionDelete}&nbsp;{$actionBanish}</td>";
-
-          echo '  </tr>';
-
-
-//echo "uform_id = " . $uForm->getVar('uform_id') . "<br>";
-      }
-      echo '</table>';
-      //echo '</form>';
-
+          $message['view'] = $actionView;
+          $message['mail'] = $actionMail;
+          $message['delete'] = $actionDelete;
+          $message['banish'] = $actionBanish;
+          
+          //-------------------------------------
+          $messages[] = $message;
+    }
+//global $xformsTpl;  
+//echo "<hr><pre>" . print_r($messages, true) . "</pre><hr>"; 
+    $GLOBALS['xoopsTpl']->assign('messages', $messages);
       //======================================================================
 ?>

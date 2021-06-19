@@ -53,12 +53,12 @@ $adminmenu = array(
           'icon'  => \Xmf\Module\Admin::menuIconPath('home.png')
     ),
     array('title' => _MI_XFORMS_ADMENU1,
-          'link'  => 'admin/main.php',
+          'link'  => 'admin/forms.php',
           'desc'  => _MI_XFORMS_ADMENU1_DESC,
           'icon'  => \Xmf\Module\Admin::menuIconPath('manage.png')
     ),
     array('title' => _MI_XFORMS_ADMENU2,
-          'link'  => 'admin/main.php?op=edit',
+          'link'  => 'admin/forms.php?op=edit',
           'desc'  => _MI_XFORMS_ADMENU2_DESC,
           'icon'  => \Xmf\Module\Admin::menuIconPath('add.png')
     ),
@@ -102,7 +102,7 @@ $adminmenu = array(
 //
 
 //---modif JJDai
-
+/*
 $adminmenu[] = [
     'title' => _MI_XFORMS_PREFERENCE,
     'menu'  => "preferences",
@@ -123,6 +123,7 @@ $adminmenu[] = [
     'link'  => "../system/admin.php?fct=blocksadmin&op=list&filter=1&selgen={$moduleId}&selmod=-2&selgrp=2&selvis=-1",
     'icon'  => $pathIcon32 . '/block.png'
 ];
+*/
 
 
 

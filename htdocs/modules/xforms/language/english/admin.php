@@ -374,5 +374,17 @@ define ('_AM_XFORMS_ACTION_UNBANISH_MAIL', "Réactiver ce courriel");
 define ('_AM_XFORMS_CONFIRM_UNBANISH_MSG', "Voulez-vous vraiment réactiver ce courriel : <b><span style='color:red;'>%s</span></b>");
 define ('_AM_XFORMS_UFORM_UNBANISH_OK', "Le courriel <b><span style='color:red;'>%s</span></b> a été réactivé avec succès");
 
+define ('_AM_XFORMS_BANISH_LIST', "Liste des banissements");
+define ('_AM_XFORMS_ACTION_DELETE', "Supprimer");
+define ('_AM_XFORMS_ATTEMPTS', "Tentatives");
+define ('_AM_XFORMS_BANISH_CONFIRM_DELETE', "Confirmer la suppresion de <b><span style='color:red;'>'%s (#%s)</span>' ?<brcet email pourra de nouveau poster des formulaires de contact.");
+define ('_AM_XFORMS_LAST_UPDATE', "Dernière mise à jour");
+define ('_AM_XFORMS_INIT_BANISH', "Réactiver tous les courriels");
+define ('_AM_XFORMS_BANISH_CONFIRM_DELETE_ALL', "Confirmer la réactivation de tous les courriels");
+define ('_AM_XFORMS_BANISH_DELETE_ALL_SUCCESS', "Tous les courriels ont été réactivés avec succès");
+
+define('_AM_XFORMS_WHY_DONATE', "Faire une donation c'est contribuer à maintenir le projet, et à aider l'auteur à le maintenir.<br>Merci à tous ceux qui feront un donation, si petite soit-elle.");
+define('_AM_XFORMS_BY', "par");
+define('_AM_XFORMS_CONTRIBUTION', "Contribution");
 
 ?>

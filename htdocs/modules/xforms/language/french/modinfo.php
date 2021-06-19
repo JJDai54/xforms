@@ -29,7 +29,7 @@ define('_MI_XFORMS_INST_NO_TABLE', "la table %s n'existe pas");
 define('_MI_XFORMS_GLOBAL_DEFAULT', "<b><span style=\"color:red\">*</span> Requis </b>');  //'[b] * Requis [/b]");
 define('_MI_XFORMS_BLK_FORM_DESC', "Un bloc pour afficher un seul formulaire disponible (avec autorisation)");
 define('_MI_XFORMS_BLK_LIST_DESC', "Un bloc pour lister les formulaires disponibles (conscients des permissions)");
-define('_MI_XFORMS_ADMENU5', "About");
+define('_MI_XFORMS_ADMENU5', "A propos");
 define('_MI_XFORMS_ADMENU5_DESC', "A propos de ce module");
 define('_MI_XFORMS_ADMENU0_DESC', "Page d'accueil Admin");
 define('_MI_XFORMS_UPLOADDIR_DESC', "Tous les fichiers de téléchargement seront stockés ici lorsqu'un formulaire est envoyé via un message privé");

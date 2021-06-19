@@ -383,4 +383,8 @@ define ('_AM_XFORMS_INIT_BANISH', "Réactiver tous les courriels");
 define ('_AM_XFORMS_BANISH_CONFIRM_DELETE_ALL', "Confirmer la réactivation de tous les courriels");
 define ('_AM_XFORMS_BANISH_DELETE_ALL_SUCCESS', "Tous les courriels ont été réactivés avec succès");
 
+define('_AM_XFORMS_WHY_DONATE', "Faire une donation c'est contribuer à maintenir le projet, et à aider l'auteur à le maintenir.<br>Merci à tous ceux qui feront un donation, si petite soit-elle.");
+define('_AM_XFORMS_BY', "par");
+define('_AM_XFORMS_CONTRIBUTION', "Contribution");
+
 ?>

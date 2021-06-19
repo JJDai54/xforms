@@ -27,22 +27,32 @@ defined('XOOPS_ROOT_PATH') || exit('Restricted access');
 
 require_once __DIR__ . '/preloads/autoloader.php';
 
-$moduleDirName                = basename(__DIR__);
+$moduleDirName = basename(__DIR__);
 //include_once (XOOPS_ROOT_PATH . "/modules/{$moduleDirName}/include/functions.php");
 
 /*  @var array $modversion */
 $modversion['version']        = '2.10';
 $modversion['module_status']  = 'Alpha 1';
-$modversion['release_date']   = '2020/06/08';
+$modversion['release_date']   = '2021/06/19';
 $modversion['name']           = _MI_XFORMS_NAME;
 $modversion['description']    = _MI_XFORMS_DESC;
 $modversion['author']         = 'Brandycoke Productions, Dylian Melgert, Juan Garcés, Jean-Jacques Delalandre(JJDai)';
-$modversion['credits']        = 'XOOPS Development Team: Black_beard, Cesag, Philou, Mamba, ZySpec';
+$modversion['credits']        = 'XOOPS Development Team: Black_beard, Cesag, Philou, Mamba, ZySpec, JJDai';
 $modversion['license']        = 'GNU GPL 2.0 or later';
 $modversion['license_url']    = 'www.gnu.org/licenses/gpl-2.0.html';
 $modversion['official']       = 0;
 $modversion['image']          = 'assets/images/logoModule.png';
 $modversion['dirname']        = $moduleDirName;
+
+$modversion['author_mail']          = 'jjdelalandre@orange.fr';
+$modversion['author_website_url']   = 'http://jubile.fr';
+$modversion['author_website_name']  = 'Origami';
+$modversion['release_info']         = '';
+$modversion['release_file']         = '';
+$modversion['description']          = '';
+
+
+
 //$modversion['dirmoduleadmin'] = '/Frameworks/moduleclasses/moduleadmin';
 //$modversion['icons16']        = '../../Frameworks/moduleclasses/icons/16';
 //$modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
@@ -95,14 +105,22 @@ $modversion['hasMain'] = 1;
 $modversion['system_menu'] = 1;
 
 // Templates
-$modversion['templates']= array (array('file' => 'xforms_index.tpl',
-                                'description' => _MI_XFORMS_TMPL_MAIN_DESC),
-                                 array('file' => 'xforms_form.tpl',
-                                'description' => _MI_XFORMS_TMPL_FORM_DESC),
-                                 array('file' => 'xforms_form_poll.tpl',
-                                'description' => _MI_XFORMS_TMPL_POLL_DESC),
-                                 array('file' => 'xforms_error.tpl',
-                                'description' => _MI_XFORMS_TMPL_ERROR_DESC)
+$modversion['templates']= array (array('file'        => 'xforms_index.tpl',
+                                       'description' => _MI_XFORMS_TMPL_MAIN_DESC),
+                                 array('file'        => 'xforms_form.tpl',
+                                       'description' => _MI_XFORMS_TMPL_FORM_DESC),
+                                 array('file'        => 'xforms_form_poll.tpl',
+                                       'description' => _MI_XFORMS_TMPL_POLL_DESC),
+                                 array('file'        => 'xforms_error.tpl',
+                                       'description' => _MI_XFORMS_TMPL_ERROR_DESC),
+                                 array('file'        => 'admin/xforms_contact-list.tpl',
+                                       'description' => 'Liste des messages'),
+                                 array('file'        => 'admin/xforms_banish-list.tpl',
+                                       'description' => 'Liste des email bannis'),
+                                 array('file'        => 'admin/xforms_forms-list.tpl',
+                                       'description' => 'Liste des formulaires de contact'),
+                                 array('file'        => 'admin/xforms_about.tpl',
+                                       'description' => 'A propos')
 );
 
 /*

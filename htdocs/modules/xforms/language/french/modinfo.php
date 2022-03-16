@@ -33,7 +33,6 @@ define('_MI_XFORMS_ADMENU5', "A propos");
 define('_MI_XFORMS_ADMENU5_DESC', "A propos de ce module");
 define('_MI_XFORMS_ADMENU0_DESC', "Page d'accueil Admin");
 define('_MI_XFORMS_UPLOADDIR_DESC', "Tous les fichiers de téléchargement seront stockés ici lorsqu'un formulaire est envoyé via un message privé");
-define('_MI_XFORMS_MENU_XBOOTSTRAP_DESC', "Block a utiliser pour menu dans les themes xbootstrap");
 define('_MI_XFORMS_BLOCKS', "Blocks");
 define('_MI_XFORMS_CAPTCHA_EVERYONE', "Captcha pour tous les utilisateurs");
 define('_MI_XFORMS_CAPTCHA_ANON_ONLY', "Captcha pour les utilisateurs anonymes");
@@ -51,7 +50,6 @@ define('_MI_XFORMS_TEXT_MAX', "Longueur maximale par défaut des zones de texte"
 define('_MI_XFORMS_TEXTAREA_ROWS', "Lignes par défaut des zones de texte");
 define('_MI_XFORMS_TEXT_WIDTH', "Largeur par défaut des zones de texte");
 define('_MI_XFORMS_CAPTCHA_NONE', "Ne pas utiliser captcha");
-define('_MI_XFORMS_MENU_XBOOTSTRAP', "xForms-Menu xbootstrap");
 define('_MI_XFORMS_INTRO_DEFAULT', "N'hésitez pas à nous contacter via les moyens suivants:");
 define('_MI_XFORMS_BLK_FORM', "Bloc de formulaire");
 define('_MI_XFORMS_HELP_ELEMENTS', "Éléments de formulaire");

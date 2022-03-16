@@ -5,7 +5,7 @@ Compilator.CompileOnBackground=0
 Compilator.ProgSaveAll=0
 Compilator.ProgRunSelection=0
 Compilator.LogType=0
-DefaultDir=J:\_Contacts\Conseil Des Sages\Site Web\sages91.fr\WEB Site Principal\web\modules\xforms
+DefaultDir=J:\Xoops\modules-JJD\xforms\Projet\htdocs\modules\xforms
 DefaultCP=0
 LogtoEnd=1
 DontOpen=0
@@ -15,7 +15,7 @@ ProjectFilesOnly=0
 Extensions=*.*
 [Project tree]
 xforms
-	-xforms
+	+xforms
 		-admin
 			-elements
 				admin\elements\ele_checkbox.php
@@ -143,7 +143,6 @@ xforms
 			blocks\form_block.php
 			blocks\index.html
 			blocks\list_block.php
-			blocks\menu-xbootstrap-block.php
 		-class
 			-Common
 				class\Common\Configurator.php
@@ -272,7 +271,6 @@ xforms
 				templates\blocks\index.html
 				templates\blocks\xforms_blk_form.tpl
 				templates\blocks\xforms_blk_list.tpl
-				templates\blocks\xforms_blk_menu_xbootstrap.tpl
 			templates\index.html
 			templates\xforms_error.tpl
 			templates\xforms_form.tpl
@@ -287,5 +285,10 @@ xforms
 		README.md
 		xoops_version.php
 [Open project files]
+0=xoops_version.php
 [Selected Project Files]
 Main=
+Selected=xoops_version.php
+[xoops_version.php]
+TopLine=9
+Caret=1,1

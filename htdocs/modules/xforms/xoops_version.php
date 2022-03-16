@@ -31,9 +31,9 @@ $moduleDirName = basename(__DIR__);
 //include_once (XOOPS_ROOT_PATH . "/modules/{$moduleDirName}/include/functions.php");
 
 /*  @var array $modversion */
-$modversion['version']        = '2.10';
+$modversion['version']        = '2.12';
 $modversion['module_status']  = 'Alpha 1';
-$modversion['release_date']   = '2021/06/19';
+$modversion['release_date']   = '2022/06/19';
 $modversion['name']           = _MI_XFORMS_NAME;
 $modversion['description']    = _MI_XFORMS_DESC;
 $modversion['author']         = 'Brandycoke Productions, Dylian Melgert, Juan Garcés, Jean-Jacques Delalandre(JJDai)';
@@ -146,16 +146,7 @@ $modversion['blocks']= array (array('file' => 'list_block.php',
                                'show_func' => 'b_xforms_form_show',
                                'edit_func' => 'b_xforms_form_edit',
                                  'options' => '1',
-                                'template' => 'xforms_blk_form.tpl'),
-
-                              array('file' => 'menu-xbootstrap-block.php',
-                                    'name' => _MI_XFORMS_MENU_XBOOTSTRAP,
-                             'description' => _MI_XFORMS_MENU_XBOOTSTRAP_DESC,
-                               'show_func' => 'b_xforms_xbootstrap_show',
-                               'edit_func' => 'b_xforms_xbootstrap_edit',
-                                 'options' => '1',
-                                'template' => 'xforms_blk_menu_xbootstrap.tpl')
-
+                                'template' => 'xforms_blk_form.tpl')
 );
 
 xoops_load('xoopslists');

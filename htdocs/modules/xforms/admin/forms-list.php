@@ -148,12 +148,6 @@ $helper = \XoopsModules\Xforms\Helper::getInstance();
                 //----------------------------------------------------------------------
 
                     if (!$f->isActive()) {
-                    
-                    
-                    
-                    
-                    
-                    
                         // Form is either inactive or expired
                         if (Constants::FORM_INACTIVE === (int)$f->getVar('form_active')) {
                             // Form is inactive
@@ -201,10 +195,10 @@ $helper = \XoopsModules\Xforms\Helper::getInstance();
                                  . '<img src="' . $mypathIcon16 . '/inactive.gif" class="tooltip floatcenter1" title="'
                                  . _AM_XFORMS_ACTION_INACTIVE . '" alt="' . _AM_XFORMS_ACTION_INACTIVE . '"></a>';
                     }
-*/                    
 
                     $item['fStatus'] = $fStatus; 
                     $item['fAction'] = $fAction; 
+*/                    
                     //-----------------------------------------------------------------------------
                     $item['edit'] = '<a href="' . $_SERVER['SCRIPT_NAME'] . '?op=edit&form_id=' . $id . '"><img src="' 
                                   . \Xmf\Module\Admin::iconUrl('edit.png', '16') . '" class="tooltip floatcenter1" title="' . _AM_XFORMS_ACTION_EDITFORM . '" alt="'

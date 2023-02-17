@@ -36,6 +36,7 @@ $formsHandler = $helper->getHandler('Forms');
 $uDataHandler = $helper->getHandler('UserData');
 $xformsEleHandler = $helper->getHandler('Element');
 $uFormHandler = $helper->getHandler('UserForm');
+$myts = MyTextSanitizer::getInstance();
 
 // Load language files
 $helper->loadLanguage('admin');

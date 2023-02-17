@@ -319,7 +319,7 @@ define('_AM_XFORMS_ELE_CHRONO_STEP', "Chrono increment.");
 define('_AM_XFORMS_ELE_BOLD', "Put the element in bold");
 define('_AM_XFORMS_ELE_UPLOAD_ALLOWED_EXT_FILE_DESC', "Separate file name extensions with a case-insensitive | For example 'doc | dot | pdf | ppt | tar | gz | zip | ics | ifb | csv '");
 define('_AM_XFORMS_ELE_UPLOAD_ALLOWED_MIME_FILE_DESC', "Separate MIME types with a case-insensitive | For example 'application / msword | application / pdf | application / vnd.ms-powerpoint | application / x-tar | application / x-gzip | application / zip | text / calendar | text / csv '");
-define('_AM_XFORMS_COLOR_SET_DESC', "Define the colors for this form. ells are defined in CSS \"style-item-color.css \" of the module or theme (see module options)");
+define('_AM_XFORMS_COLOR_SET_DESC', "Define the colors for this form. the are defined in CSS \"style-item-color.css \" of the module or theme (see module options)");
 define('_AM_XFORMS_RPT_PURGE_REPORT', "Purge report");
 define('_AM_XFORMS_RPT_PURGE_FORM', "Purge form reports");
 define('_AM_XFORMS_RPT_PURGE_ALL_FORM', "Purge all reports from all forms");

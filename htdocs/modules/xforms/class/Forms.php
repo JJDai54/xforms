@@ -192,6 +192,9 @@ class Forms extends \XoopsObject
         }
         $formOutput->addElement(new \XoopsFormHidden('form_id', $this->getVar('form_id')));
 
+//pas de captcha et de bouton de validation si c'est juste un formulaire d'information == 2
+//pour les autres affichage du captcha pour les anonymes et le bouton de validation
+if($this->getVar('form_answer') < 2){
         // Load captcha
         //$xoopsUser = $GLOBALS['xoopsUser'];
         global $xoopsUser;
@@ -203,8 +206,9 @@ class Forms extends \XoopsObject
         }
 
         $subButton = new \XoopsFormButton('', 'submit', $this->getVar('form_submit_text'), 'submit');
-        $subButton->setExtra('tabindex="' . $eleCount++ . '"'); // allow tabbing to the Submit button too
+        $subButton->setExtra('tabindex="' . $eleCount++ . '" style="width:400px;font-weight:bold;font-size:1.5em;"'); // allow tabbing to the Submit button too
         $formOutput->addElement($subButton, 1);
+}
 
         $eles = array();
         foreach ($formOutput->getElements() as $currElement) {
@@ -231,7 +235,7 @@ class Forms extends \XoopsObject
 
             $eles[] = array('caption' => Xforms\getHtml($caption),
                                'name' => $name,
-                               'body' => $currElement->render(),
+                               'body' => $currElement->render(), // ici
                              'hidden' => $currElement->isHidden(),
                            'required' => $req,
                         'display_row' => $display_row,
@@ -253,7 +257,7 @@ class Forms extends \XoopsObject
                                           'form_req_suffix' => $helper->getConfig('suffix'),
                                                'form_intro' => Xforms\getHtml($this->getVar('form_intro')),
                                            'form_color_set' => Xforms\getHtml($this->getVar('form_color_set')),
-                                         'form_text_global' => Xforms\getHtml($helper->getConfig('global')),
+                                         'form_text_global' => ($this->getVar('form_answer')) !=2 ? Xforms\getHtml($helper->getConfig('global')) : '',
                                            'form_is_hidden' => $isHiddenTxt,
                                           'xoops_pagetitle' => $this->getVar('form_title'),
                                            'form_edit_link' => $this->getEditLinkInfo()

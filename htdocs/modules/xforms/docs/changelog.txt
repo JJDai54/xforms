@@ -1,3 +1,14 @@
+Pour utilser cette fiche, il faut la télécharger et l'imprimer.
+Une fois rempplie, déposer-la dans la bîite à letre du Conseil des Sage ou postez-la à cette aresse:
+
+Conseil des Sages
+40 b rue Danièle Casanova
+91700 sainte-Geneviève-Bois
+
+Nous nous chargerons d'en faire le suivi auprès des services de la mairie.
+Le CdS
+
+
 2.10 ALpha 1 (JJDai) 2020-05-1105
 - Ajout du paramètre "isEmails" dans l'élément "textarea". une copie sera envoyée à chaque email."
 - Ajout de la possibilité de mettre plusieurs zones "courriels"; une copie sera envoyée à chaque courriel
@@ -20,7 +31,7 @@
 - Ajout des filtres "Tout - Actif - Inactif - A venir - Expiré" dans l'admin des formulaires
   pour pouvoir réactiver notamment des formulaire expirés si besoins.
   Suppression du bouton "afficher les formsulaires inactifs" devenu inutile
-- Modification des templates avec utilisation des classe itemHead itemBody,
+- Modification des templates avec utilisation des classe item-head item-body, ....
   qui permettent d'affecter une couleur différentes pour chaque formulaire
   permet une harmonisation du site avec le module news notamment si la feuille de style est dans un dossier commun
   a definir dans les options du module

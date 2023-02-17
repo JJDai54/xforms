@@ -319,7 +319,7 @@ define('_AM_XFORMS_ELE_CHRONO_STEP', "Incrément du chrono.");
 define('_AM_XFORMS_ELE_BOLD', "Mettre l'élément en gras");
 define('_AM_XFORMS_ELE_UPLOAD_ALLOWED_EXT_FILE_DESC', "Séparez les extensions de nom de fichier avec un |, insensible à la casse. Par exemple ' doc | dot | pdf | ppt | tar | gz | zip | ics | ifb | csv '");
 define('_AM_XFORMS_ELE_UPLOAD_ALLOWED_MIME_FILE_DESC', "Séparez les types MIME avec un |, insensible à la casse. Par exemple ' application / msword | application / pdf | application / vnd.ms-powerpoint | application / x-tar| application / x-gzip | application / zip|text / calendar | text / csv '");
-define('_AM_XFORMS_COLOR_SET_DESC', "Défini les couleur por ce formulaire. ells sont défini dans le CSS \"style-item-color.css\" du module ou du theme (voir les options du module)");
+define('_AM_XFORMS_COLOR_SET_DESC', "Défini les couleurs pour ce formulaire. ells sont définies dans le CSS \"style-item-color.css\" du module ou du theme (voir les options du module)");
 define('_AM_XFORMS_RPT_PURGE_REPORT', "Purger le rapport");
 define('_AM_XFORMS_RPT_PURGE_FORM', "Purger les rapports du formulaire");
 define('_AM_XFORMS_RPT_PURGE_ALL_FORM', "Purger tous les rapports de tous les formulaires");
@@ -358,7 +358,11 @@ define('_AM_XFORMS_CONFIRM_DELETE_MSG', "Voulez-vous vraiment supprimer le messa
 define('_AM_XFORMS_UFORM_DELETE_OK', "Le message a été supprimé correctement!");
 define('_AM_XFORMS_ACTION_DELETE_MAIL', "Supprimer le message");
 define('_AM_XFORMS_ANSWER_HISTORIC', "Historique des réponses");
-define('_AM_XFORMS_CONTACT_XFORM', "Formulaire de contact");
+define('_AM_XFORMS_CONTACT_XFORM', "Contact");
+define('_AM_XFORMS_CLASSIC_XFORM', "Classic");
+define('_AM_XFORMS_INFORMATION_XFORM', "Information");
+define('_AM_XFORMS_TYPE_XFORM', "Type de formulaire");
+define('_AM_XFORMS_TYPE_XFORM_DESC', "0 : Formulaire classic.<br>1 : Défini les formulaires nécéssitant une réponse, onglet \"contact\".<br>2 : Formulaire d'information sans zone de saisie");
 define('_AM_XFORMS_ACTION_VIEW_EMAIL', "Consulter le message et l'historique");
 
 define('_AM_XFORMS_ELE_ISEMALSLIST', "Est-ce une liste de courriels ?");

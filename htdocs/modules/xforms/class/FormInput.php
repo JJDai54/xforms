@@ -424,11 +424,11 @@ class FormInput extends \XoopsFormElement
     {
         // title attribute needs to be generated if not already set
         if (!$this->hasAttribute('title')) {
-            $this->setAttribute('title', $this->getTitle());
+            $this->setAttribute('title', 'ggggggg' . $this->getTitle());
         }
         // generate id from name if not already set
         if (!$this->hasAttribute('id')) {
-            $id = $this->getAttribute('name');
+            $id = 'ggggggg' . $this->getAttribute('name');
             if (substr($id, -2) === '[]') {
                 $id = substr($id, 0, strlen($id)-2);
             }

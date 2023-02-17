@@ -56,4 +56,7 @@ define('_MD_XFORMS_DASHBOARD', "xForms Dashboard");
 define('_MD_XFORMS_MSG_NOFORM_SELECTED', "Vous devez entrer un numéro de formulaire pour entrer");
 define('_MD_XFORMS_MSG_SENT', "Votre formulaire a été envoyé. Merci.");
 
+define('_MD_XFORMS_MAX_IMG_SIZE', "<b>Poids maximum : %s mo - Taille maximum %s x %s pixels</b>");
+define('_MD_XFORMS_MAX_FILE_SIZE', "<b>Poids maximum du fichier : %s mo</b>");
+
 ?>

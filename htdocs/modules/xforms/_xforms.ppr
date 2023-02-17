@@ -5,6 +5,7 @@ Compilator.CompileOnBackground=0
 Compilator.ProgSaveAll=0
 Compilator.ProgRunSelection=0
 Compilator.LogType=0
+Compilator.LogEncoding=0
 DefaultDir=J:\Xoops\modules-JJD\xforms\Projet\htdocs\modules\xforms
 DefaultCP=0
 LogtoEnd=1
@@ -12,11 +13,12 @@ DontOpen=0
 AbsolutePath=0
 FileFormat=0
 ProjectFilesOnly=0
+HTServer=localhost
 Extensions=*.*
 [Project tree]
-xforms
+_xforms
 	+xforms
-		-admin
+		+admin
 			-elements
 				admin\elements\ele_checkbox.php
 				admin\elements\ele_chrono.php
@@ -53,8 +55,13 @@ xforms
 			admin\contact-list.php
 			admin\contact-sendmail.php
 			admin\default_elements.php
-			admin\editelement.php
 			admin\elements.php
+			admin\elements-default.php
+			admin\elements-delete.php
+			admin\elements-edit.php
+			admin\elements-list.php
+			admin\elements-save.php
+			admin\elements-save-list.php
 			admin\file.php
 			admin\forms.php
 			admin\forms-active.php
@@ -121,6 +128,8 @@ xforms
 					assets\images\icons\update.gif
 				assets\images\blank.gif
 				assets\images\brokenimg.png
+				assets\images\document-02.jpg
+				assets\images\document-02.png
 				assets\images\index.html
 				assets\images\logoModule.png
 				assets\images\ui-bg_glass_55_fbf9ee_1x400.png
@@ -143,7 +152,7 @@ xforms
 			blocks\form_block.php
 			blocks\index.html
 			blocks\list_block.php
-		-class
+		+class
 			-Common
 				class\Common\Configurator.php
 				class\Common\FilesManagement.php
@@ -256,8 +265,8 @@ xforms
 			sql\MPD-01.mwb.bak
 			sql\MPD-01.pdf
 			sql\mysql.sql
-		-templates
-			-admin
+		+templates
+			+admin
 				templates\admin\index.html
 				templates\admin\xforms_about.tpl
 				templates\admin\xforms_banish-list.tpl
@@ -275,20 +284,58 @@ xforms
 			templates\xforms_error.tpl
 			templates\xforms_form.tpl
 			templates\xforms_form_poll.tpl
+			templates\xforms_form-old.tpl
 			templates\xforms_index.tpl
-		_xforms.ppr
 		CONTRIBUTING.md
 		file.php
 		header.php
 		index.php
+		index-send.php
+		index-view.php
 		LICENSE
 		README.md
 		xoops_version.php
 [Open project files]
-0=xoops_version.php
+0=index.php
+1=index-send.php
+2=admin\elements-save-list.php
+3=admin\elements-list.php
+4=admin\elements\ele_text.php
+5=class\ElementRenderer.php
+6=class\Element.php
+7=include\config.php
+8=admin\about.php
+9=xoops_version.php
 [Selected Project Files]
 Main=
 Selected=xoops_version.php
-[xoops_version.php]
-TopLine=9
+[index.php]
+TopLine=24
+Caret=1,41
+[index-send.php]
+TopLine=678
+Caret=3,691
+[admin\elements-save-list.php]
+TopLine=241
+Caret=3,272
+[admin\elements-list.php]
+TopLine=84
+Caret=25,146
+[admin\elements\ele_text.php]
+TopLine=27
+Caret=1,44
+[class\ElementRenderer.php]
+TopLine=512
+Caret=19,533
+[class\Element.php]
+TopLine=95
 Caret=1,1
+[include\config.php]
+TopLine=56
+Caret=1,73
+[admin\about.php]
+TopLine=19
+Caret=1,36
+[xoops_version.php]
+TopLine=35
+Caret=38,34

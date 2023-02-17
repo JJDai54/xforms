@@ -204,7 +204,8 @@ class UserForm extends \XoopsObject
                                            'form_edit_link' => $this->getEditLinkInfo()
 
         );
-*/
+*/           
+
         return $assignArray;
     }
 }

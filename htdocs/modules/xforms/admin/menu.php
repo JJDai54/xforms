@@ -63,7 +63,7 @@ $adminmenu = array(
           'icon'  => \Xmf\Module\Admin::menuIconPath('add.png')
     ),
     array('title' => _MI_XFORMS_ADMENU3,
-          'link'  => 'admin/editelement.php',
+          'link'  => 'admin/elements.php',
           'desc'  => _MI_XFORMS_ADMENU3_DESC,
           'icon'  => \Xmf\Module\Admin::menuIconPath('insert_table_row.png')
     ),

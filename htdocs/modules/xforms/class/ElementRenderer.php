@@ -54,12 +54,12 @@ class ElementRenderer
      */
     public function __construct(\XoopsModules\Xforms\Element $eleObj)
     {
-        $this->ele     = $eleObj;
+        $this->ele = $eleObj;
         $this->dirname = basename(dirname(__DIR__));
     }
 
     /**
-     * constructElement method creates displayable XoopsForm element
+     * constructElement method creates displayable XoopsForm element in admmin list or user page
      *
      * @todo test refactored code to eliminate need for 'global $form'
      * @param bool $admin
@@ -111,7 +111,7 @@ if(!$admin){
  }
 */
         switch ($eleType) {
-            case 'checkbox':
+            case 'checkbox': 
                 $selected = array();
                 $options  = array();
                 $oCount   = 1;
@@ -272,7 +272,7 @@ if(!$admin){
                         );
                 } else {
                 //pour affichage dans le backoffice-office
-                    $sysHelper = Helper::getHelper('system');
+                   $sysHelper = Helper::getHelper('system');
                    $formElement = Xforms\get_editor($eleCaption,$formEleId, $eleValue[0], $width='50%', $height = '260px');
 
 //                     $formHtmlConfigs = array('editor' => Xforms\get_editor_name(),
@@ -528,8 +528,10 @@ if(!$admin){
 
                 $formElement = new \XoopsFormText($eleCaption, $formEleId, $eleValue[0], // box width
                                                  $eleValue[1], // maxlength
-                                                 $myts->htmlSpecialChars($eleValue[2]) // default value
+                                                 $myts->htmlSpecialChars($eleValue[2]) // value
                 );
+                //echo "<hr><pre>" .  $myts->htmlSpecialChars($eleValue[2]) . "</pre><hr>";        //JJDai           
+                //echo "<hr><pre>{$eleValue[2]}</pre><hr>";                   
                 if (isset($eleValue[4])) { // not set if form was imported
                     $formElement->setExtra('placeholder="' . $eleValue[4] . '"');
                 }
@@ -632,7 +634,14 @@ if(!$admin){
 //    $eleValue[0] = $data[$formEleId];
 //  }
 
-                   $formElement = new \XoopsFormFile($eleCaption, $formEleId, $eleValue[0]);
+                    $formElement = new \XoopsFormElementTray($eleCaption, '<br>');
+                    $inpFile = new \XoopsFormFile('', $formEleId, $eleValue[0]);                   
+                    //$weightMo = floor(($eleValue[0]) / 1000000) . " mo";
+                    $weightMo = $this->convertOctet(($eleValue[0]), 'mo');
+                    $Info = new \XoopsFormLabel('', sprintf(_MD_XFORMS_MAX_FILE_SIZE, $weightMo));
+                   
+                    $formElement->addElement($inpFile);
+                    $formElement->addElement($Info);
                }
                break;
 
@@ -653,7 +662,14 @@ if(!$admin){
 //  if (isset($data[$formEleId])){
 //    $eleValue[0] = $data[$formEleId];
 //  }
-                    $formElement = new \XoopsFormFile($eleCaption, $formEleId, $eleValue[0]);
+                    $formElement = new \XoopsFormElementTray($eleCaption, '<br>');
+                    $inpFile = new \XoopsFormFile('', $formEleId, $eleValue[0]);
+                    //$weightMo = floor(($eleValue[0]) / 1000000) . " mo";
+                    $weightMo = $this->convertOctet(($eleValue[0]), 'mo');
+                    $Info = new \XoopsFormLabel('', sprintf(_MD_XFORMS_MAX_IMG_SIZE, $weightMo, (string)$eleValue[4], (string)$eleValue[5]));
+                    
+                    $formElement->addElement($inpFile);
+                    $formElement->addElement($Info);
                 }
                 break;
 
@@ -716,6 +732,23 @@ if(!$admin){
             $formElement->setExtra('required');
         }
         return $formElement;
+    }
+    
+    /**
+     * @param int $octet
+     * @param        $id
+     * @param        $unite
+     *
+     * @return int 
+     */
+    public function convertOctet($octet, $unite = 'mo')
+    {
+        switch (strtolower($unite)){
+        case 'mo' : return floor($octet / 1000000); break; 
+        case 'go' : return floor($octet / 1000000000); break; 
+        case 'ko' : return floor($octet / 1000000000000); break; 
+        default   : return floor($octet / 1000); break; 
+        }
     }
 
     /**

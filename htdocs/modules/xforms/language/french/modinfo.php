@@ -88,7 +88,7 @@ define('_MI_XFORMS_MAIL_CHARSET', "Encodage de texte pour envoyer des emails");
 define('_MI_XFORMS_PREFIX', "Préfixe les champs obligatoires");
 define('_MI_XFORMS_NOFORM', "Texte affiché quand aucun formulaire n'est visible pour l'utilisateur actuel");
 define('_MI_XFORMS_SUFFIX', "Suffixe pour les champs obligatoires");
-define('_MI_XFORMS_GLOBAL', "Texte à afficher dans chaque page de formulaire");
+define('_MI_XFORMS_GLOBAL', "Texte à afficher dans chaque bas page de formulaire");
 define('_MI_XFORMS_DESC', "Ce module est utilisé pour créer des formulaires pour collecter les entrées utilisateur.");
 define('_MI_XFORMS_MOREINFO_FORM', "URL du formulaire soumis");
 define('_MI_XFORMS_CAPTCHA', "Utiliser captcha lors de la soumission des formulaires?");

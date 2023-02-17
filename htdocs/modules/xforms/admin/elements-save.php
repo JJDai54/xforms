@@ -38,197 +38,16 @@ require_once '../include/functions.php';
 $xformsEleHandler = $helper->getHandler('Element');
 
 $myts = \MyTextSanitizer::getInstance();
+//-----------------------------------------------------------
 
-/* @var \XoopsModules\Xforms\FormsHandler $formsHandler */
-if ($formsHandler->getCount() < 1) {
-    $helper->redirect('admin/main.php?op=edit', Constants::REDIRECT_DELAY_NONE, _AM_XFORMS_GO_CREATE_FORM);
-}
 
-$op         = Request::getCmd('op', '');
-$clone      = Request::getInt('clone', Constants::FORM_NOT_CLONED);
-$formId     = Request::getInt('form_id', Constants::FORM_NOT_VALID);
-$eleId      = Request::getInt('ele_id', Constants::ELE_NOT_VALID);
-
-//JJDai - la fonction "Request" sanityse le html, big probleme
-//$eleValue   = Request::getArray('ele_value', '');
-$eleValue   = $_POST['ele_value'];
-
-$eleCaption = Request::getText('ele_caption', '', 'POST');
-$eleOrder   = Request::getInt('ele_order', 0, 'POST');
-$eleReq     = Request::getInt('ele_req', Constants::ELEMENT_NOT_REQD, 'POST');
-$submit     = Request::getCmd('submit', '', 'POST');
-
-switch ($op) {
-    case 'edit':
-        xoops_cp_header();
-        /* @var \Xmf\Module\Admin $adminObject */
-        $adminObject->displayNavigation(basename(__FILE__));
-        Xforms\load_css();
-/*
-        if (!class_exists('XformsFormInput')) {
-            include_once $helper->path('class/FormInput.php');
-        }
-*/
-        if (Constants::ELE_NOT_VALID !== (int)$eleId) {
-            $element     = $xformsEleHandler->get($eleId);
-            $eleType     = $element->getVar('ele_type');
-            $outputTitle = (Constants::FORM_CLONED === $clone) ? _AM_XFORMS_ELE_CREATE : sprintf(_AM_XFORMS_ELE_EDIT, Xforms\getHtml($element->getVar('ele_caption')));
-        } else {
-            $element     = $xformsEleHandler->create();
-            $eleType     = mb_strtolower(Request::getCmd('ele_type', 'text'));
-            $outputTitle = _AM_XFORMS_ELE_CREATE;
-        }
-
-        if ('date' === $eleType) { // only load jquery & modernizr if needed
-            $GLOBALS['xoTheme']->addStylesheet('browse.php?modules/' . $moduleDirName . '/assets/css/jquery-ui.min.css');
-            $GLOBALS['xoTheme']->addStylesheet('browse.php?modules/' . $moduleDirName . '/assets/css/jquery-ui.structure.min.css');
-            $GLOBALS['xoTheme']->addStylesheet('browse.php?modules/' . $moduleDirName . '/assets/css/jquery-ui.theme.min.css');
-            $GLOBALS['xoTheme']->addScript('browse.php?modules/' . $moduleDirName . '/assets/js/modernizr-custom.js');
-            $GLOBALS['xoTheme']->addScript('browse.php?Frameworks/jquery/jquery.js');
-            $GLOBALS['xoTheme']->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
-        }
-
-        $sysHelper  = Helper::getHelper('system');
-        $output     = new \XoopsThemeForm($outputTitle, 'form_ele', $_SERVER['SCRIPT_NAME'], 'post', true);
-
-        $value      = $element->getVar('ele_value', 'f');
-        $eleReq     = $element->getVar('ele_req');
-        $displayRow = $element->getVar('ele_display_row');
-        $eleDisplay = $element->getVar('ele_display');
-        $eleOrder   = $element->getVar('ele_order');
-
-        if ('html' !== $eleType) {
-            // editor settings
-            if (_XFORMS_EDITOR_MODE == 1){
-//               $editorConfigs = array('editor' => Xforms\get_editor_name(),
-//                                        'rows' => 10,
-//                                        'cols' => 60,
-//                                       'width' => '100%',
-//                                      'height' => '350px',
-//                                        'name' => 'ele_caption',
-//                                       'value' => (Constants::FORM_CLONED === $clone)
-//                                                  ? sprintf(_AM_XFORMS_COPIED, $element->getVar('ele_caption', 'e'))
-//                                                  : $element->getVar('ele_caption', 'e')
-//               );
-//               // end editor settings
-//               $textEleCaption  = new \XoopsFormEditor(_AM_XFORMS_ELE_CAPTION, 'ele_caption', $editorConfigs);
-              $exp = (Constants::FORM_CLONED === $clone)
-                                                 ? sprintf(_AM_XFORMS_COPIED, $element->getVar('ele_caption', 'e'))
-                                                 : $element->getVar('ele_caption', 'e');
-              $textEleCaption = Xforms\get_editor(_AM_XFORMS_ELE_CAPTION, 'ele_caption', $exp, $width='50%', $height = '260px');
-
-            }else{
-              $textEleCaption = new \XoopsFormText(_AM_XFORMS_ELE_CAPTION, 'ele_caption', 50, 255, $element->getVar('ele_caption'));
-            }
-//             if (_XFORMS_EDITOR_MODE == 1){
-//             }else{
-//               $textEleCaption = new \XoopsFormText(, '', 50, 255, );
-//             }
-
-/*
-            $captionRenderer = $textEleCaption->editor->renderer;
-            if (property_exists($captionRenderer, 'skipPreview')) {
-                $textEleCaption->editor->renderer->skipPreview = true;
-            }
-*/
-            $output->addElement($textEleCaption);
-
-            if ('pattern' === $eleType) {
-                $checkEleReq = new \XoopsFormHidden('ele_req', Constants::REQUIRED);
-            } else {
-                $checkEleReq = new \XoopsFormRadioYN(_AM_XFORMS_ELE_REQ, 'ele_req', $eleReq);
-            }
-            $output->addElement($checkEleReq);
-
-            $checkEleDisplayRow = new \XoopsFormCheckBox(_AM_XFORMS_ELE_DISPLAY_ROW, 'ele_display_row', $displayRow);
-            $checkEleDisplayRow->setDescription(_AM_XFORMS_ELE_DISPLAY_ROW_DESC);
-            $checkEleDisplayRow->addOption(2, ' ');
-            $output->addElement($checkEleDisplayRow);
-        } else {
-            $textEleCaption = new \XoopsFormText(_AM_XFORMS_ELE_CAPTION, 'ele_caption',50, 255, $element->getVar('ele_caption', 'e'));
-            $textEleCaption->setDescription(_AM_XFORMS_ELE_HTML_CAPTION_DESC);
-            $output->addElement($textEleCaption);
-        }
-
-        $checkEleDisplay = new \XoopsFormRadioYN(_AM_XFORMS_ELE_DISPLAY, 'ele_display', $eleDisplay);
-        $output->addElement($checkEleDisplay);
-        $orderEleDisp = new FormInput(_AM_XFORMS_ELE_ORDER, 'ele_order', 5, 5, $eleOrder, null, 'number');
-        $orderEleDisp->setAttribute('min', 0);
-        $orderEleDisp->setExtra('style="width: 5em;"');
-        $output->addElement($orderEleDisp);
-
-        $elementName = '';
-        $validElements = $xformsEleHandler->getValidElements();
-        $validKeys = array_keys($validElements);
-        if (in_array($eleType, $validKeys)) {
-            $elementName = constant('_AM_XFORMS_ELE_' . strtoupper($eleType));
-            include $helper->path('admin/elements/ele_' . $eleType . '.php');
-        } else {
-            $helper->redirect('admin/index.php',
-                                    Constants::REDIRECT_DELAY_MEDIUM,
-                                    sprintf(_AM_XFORMS_ERR_BAD_ELEMENT, htmlspecialchars($eleType))
-            );
-        }
-
-        $output->addElement(new \XoopsFormHidden('op', 'save'));
-        $output->addElement(new \XoopsFormHidden('ele_type', $eleType));
-
-        if ((0 === (int)$formId) || (Constants::FORM_CLONED === $clone)) {
-            $selectApplyForm = new \XoopsFormSelect(_AM_XFORMS_ELE_APPLY_TO_FORM, 'form_id', $formId);
-            $forms           = $formsHandler->getAll(null, null, true, false);
-            foreach ($forms as $fObj) {
-                $selectApplyForm->addOption($fObj->getVar('form_id'), $fObj->getVar('form_title'));
-            }
-            $output->addElement($selectApplyForm);
-            $output->addElement(new \XoopsFormHidden('clone', Constants::FORM_CLONED));
-        } else {
-            $output->addElement(new \XoopsFormHidden('form_id', $formId));
-        }
-
-        if ((0 !== $eleId) && (Constants::FORM_NOT_CLONED === $clone)) {
-            $output->addElement(new \XoopsFormHidden('ele_id', $eleId));
-        }
-        $tray = new \XoopsFormButtonTray('submit', _SUBMIT, 'submit', null);
-        $output->addElement($tray);
-        echo '<h4 class="center">' . $elementName . '</h4>';
-        $output->display();
-        break;
-
-    case 'delete':
-        $eleId = (int)$eleId; // fix for Xmf\Request bug in XOOPS < 2.5.9 FINAL
-        if (0 === (int)$eleId) {
-            $helper->redirect('admin/main.php',
-                              Constants::REDIRECT_DELAY_NONE,
-                              _AM_XFORMS_NOTHING_SELECTED
-            );
-        }
-        if (empty($_POST['ok'])) {
-            $element = $xformsEleHandler->get($eleId);
-            xoops_cp_header();
-            xoops_confirm(array('op' => 'delete', 'ele_id' => $eleId, 'form_id' => $formId, 'ok' => Constants::CONFIRM_OK), $_SERVER['SCRIPT_NAME'], sprintf(_AM_XFORMS_ELE_CONFIRM_DELETE, $element->getVar('ele_caption')), _YES);
-        } else {
-            if (!$GLOBALS['xoopsSecurity']->check()) {
-            //exit;
-                redirect_header($_SERVER['SCRIPT_NAME'], Constants::REDIRECT_DELAY_MEDIUM, implode('<br>', $GLOBALS['xoopsSecurity']->getErrors()));
-            }
-            //delete the element
-            $eleObj = $xformsEleHandler->get($eleId);
-            $xformsEleHandler->delete($eleObj);
-            //delete the userdata for this element too
-            $uDataHandler = $helper::getInstance()->getHandler('UserData');
-            //$uDataHandler = $helper->getHandler('UserData');
-            $uDataHandler->deleteAll(new \Criteria('ele_id', $eleId));
-            redirect_header($helper->url('admin/elements.php?form_id=' . $formId), Constants::REDIRECT_DELAY_NONE, _AM_XFORMS_DBUPDATED);
-        }
-        break;
-
-    case 'save':
-    //             echo "_POST<pre>" . print_r($_POST, true) . "</pre>";
 //             echo "_GET<pre>" . print_r($_GET, true) . "</pre>";
 //             exit;
-// echo "<hr><pre>" .  print_r($_POST, true) . "</pre><hr>";
-// echo "<hr><pre>" .  print_r($eleValue, true) . "</pre><hr>";
-
+// echo "<hr>_POST<pre>" .  print_r($_POST, true) . "</pre><hr>";
+//$eleValue   =  Request::getArray('ele_value'); //$_POST['ele_value'];
+$eleValue   =  $_POST['ele_value'];
+// echo "<hr>eleValue<pre>" .  print_r($eleValue, true) . "</pre><hr>";
+//exit;
         //check to make sure this is from known location
         if (!$GLOBALS['xoopsSecurity']->check()) {
             redirect_header($_SERVER['SCRIPT_NAME'], Constants::REDIRECT_DELAY_MEDIUM, implode('<br>', $GLOBALS['xoopsSecurity']->getErrors()));
@@ -269,9 +88,10 @@ switch ($op) {
 
         switch ($eleType) {
             case 'checkbox':
-                //JJDai - on veut les coché pas les non cochés
+//echo "<hr>debut<hr>";
+                //JJDai - on veut les cochés pas les non cochés
                 //$checked1  = Request::getArray('ckbox', Constants::ELE_NOT_CHECKED, 'POST');
-                $checked1  = Request::getArray('ckbox', Constants::ELE_CHECKED, 'POST');
+                $checked1  = Request::getArray('ckbox');
                 $checked2  = array_map('intval', $checked1);
              echo "_POST<pre>" . print_r($_POST, true) . "</pre>";
              echo "_Checked1<pre>" . print_r($checked1, true) . "</pre>";
@@ -292,7 +112,7 @@ switch ($op) {
                     }
                 }
              echo "_ele-result<pre>" . print_r($value, true) . "</pre>";
-
+//exit("<hr>FIN<hr>");
              //exit;
                 break;
 
@@ -348,11 +168,11 @@ switch ($op) {
              * value array [0] = text value
              */
             case 'html':
-                $value[0] =  $eleValue[0] ;
+                $value[0] =  $eleValue[0];
 //                $value[0] =  $myts->htmlSpecialChars($eleValue[0]);
 
                 //echo "{$eleValue[0]}<br>";;
-                //echo "{$value[0]}<br>";exit('html');
+                //echo "{$value[0]}<br>";exit('html');exit;
                 break;
 
             /**
@@ -627,40 +447,6 @@ switch ($op) {
             xoops_cp_header();
             echo $element->getHtmlErrors();
         } else {
-            redirect_header($helper->url('admin/elements.php?form_id=' . $formId), Constants::REDIRECT_DELAY_NONE, _AM_XFORMS_DBUPDATED);
+        echo "<hr>" . $helper->url('admin/elements.php?op=list&form_id=' . $formId) . "<hr>";
+            redirect_header($helper->url('admin/elements.php?op=list&form_id=' . $formId), Constants::REDIRECT_DELAY_NONE, _AM_XFORMS_DBUPDATED);
         }
-        break;
-
-    default:
-        xoops_cp_header();
-        $adminObject->displayNavigation(basename(__FILE__));
-
-        //get the valid element types
-        $validEleTypes = $xformsEleHandler->getValidElements();
-
-        $counter = 0;
-        $cssClass = '';
-        echo '  <table class="outer bspacing1">'
-           . '    <thead>'
-           . '    <tr><th colspan="2">' . _AM_XFORMS_ELE_CREATE . '</th></tr>'
-           . '    </thead>'
-           . '    <tbody>';
-        foreach ($validEleTypes as $thisType => $thisDesc) {
-            if (++$counter % 2) {
-                //odd
-                $cssClass = ('odd' === $cssClass) ? 'even' : 'odd';
-                echo '    <tr><td class="' . $cssClass . ' center"><a href="' . $_SERVER['SCRIPT_NAME'] . '?op=edit&amp;ele_type=' . $thisType . '">' . $thisDesc . '</a></td>';
-            } else {
-                //even
-                echo '<td class="' . $cssClass . ' center"><a href="' . $_SERVER['SCRIPT_NAME'] . '?op=edit&amp;ele_type=' . $thisType . '">' . $thisDesc . '</a></td></tr>';
-            }
-        }
-        if ($counter % 2) { //odd so finish out table row
-            echo '<td class="' . $cssClass . ' center">&nbsp;</td></tr>';
-        }
-        echo '  </tbody>'
-           . '  </table>';
-        break;
-}
-include __DIR__ . '/admin_footer.php';
-xoops_cp_footer();

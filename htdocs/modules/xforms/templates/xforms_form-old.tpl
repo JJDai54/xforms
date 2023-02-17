@@ -2,6 +2,9 @@
 <div style="text-align: center; background-color: black;"><span style="color: yellow;">Template : <{$smarty.template}></span></div>
 <{/if}>
 
+
+<{if '' != $form_intro}>
+<{/if}>
 <style>
 .Xforms\intro{
   background-color: #C8EBFA;
@@ -30,18 +33,16 @@
 .tblForm td{
   border:0px;
 }
-p{margin:0px;padding:12px;}
 </style>
 
 
 
-
 <{* ================================================== *}>
-<div class="item-round-top item-head <{$form_color_set}>-item-head"><h1 class="center"><{$form_output.title}></h1></div>
+<div class="item-head <{$form_color_set}>-item-head"><p><h1 class="center"><{$form_output.title}></h1></p></div>
 
-<div class="item-round-no item-info <{$form_color_set}>-item-info"><{$form_intro}></div>
+<div class="item-info <{$form_color_set}>-item-info"><p><{$form_intro}></p></div>
 
-<div id="xforms" class="item-round-no <{$form_color_set}>-item-body"">
+<div id="xforms">
 
 <{$form_output.javascript}>
 <form name="<{$form_output.name}>" id="<{$form_output.name}>" action="<{$form_output.action}>" method="<{$form_output.method}>" class="xforms" <{$form_output.extra}>>
@@ -86,13 +87,10 @@ p{margin:0px;padding:12px;}
 </div>
 
 
-
-<div class="item-round-bottom item-foot <{$form_color_set}>-item-foot">
+<div class="item-foot <{$form_color_set}>-item-foot">
 <{if '' != $form_text_global}><{$form_text_global}><{/if}>
 <{if '' != $form_edit_link}>
-    <a href="<{$form_edit_link.location}>" class="floatleft" target="<{$form_edit_link.target}>">
-        <img src="<{$form_edit_link.icon_location}>" alt="<{$form_edit_link.icon_alt}>" title="<{$form_edit_link.icon_title}>">
-    </a>
+    <a href="<{$form_edit_link.location}>" class="floatleft" target="<{$form_edit_link.target}>"><img src="<{$form_edit_link.icon_location}>" alt="<{$form_edit_link.icon_alt}>" title="<{$form_edit_link.icon_title}>"></a>
 <{/if}>
 
 </div>

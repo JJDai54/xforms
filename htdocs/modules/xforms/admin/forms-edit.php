@@ -200,8 +200,12 @@ $myts = \MyTextSanitizer::getInstance();
         $selectFormActive = new \XoopsFormRadioYN(_AM_XFORMS_ACTIVE, 'form_active', (((int)$form->getVar('form_active') > 0) ? 1 : 0), _YES, _NO);
         $selectFormActive->setDescription(_AM_XFORMS_ACTIVE_DESC);
 
-        $selectFormAnswer = new \XoopsFormRadioYN(_AM_XFORMS_CONTACT_XFORM, 'form_answer', (((int)$form->getVar('form_answer') > 0) ? 1 : 0), _YES, _NO);
-        $selectFormAnswer->setDescription(_AM_XFORMS_ANSWER_DESC);
+        //$selectFormAnswer = new \XoopsFormRadioYN(_AM_XFORMS_CONTACT_XFORM, 'form_answer', (((int)$form->getVar('form_answer') > 0) ? 1 : 0), _YES, _NO);
+        $selectFormAnswer = new \XoopsFormRadio(_AM_XFORMS_TYPE_XFORM, 'form_answer', $form->getVar('form_answer'));
+        $selectFormAnswer->addoption(0, _AM_XFORMS_CLASSIC_XFORM);
+        $selectFormAnswer->addoption(1, _AM_XFORMS_CONTACT_XFORM);
+        $selectFormAnswer->addoption(2, _AM_XFORMS_INFORMATION_XFORM);
+        $selectFormAnswer->setDescription(_AM_XFORMS_TYPE_XFORM_DESC);
 
         $hiddenOp = new \XoopsFormHidden('op', 'saveform');
         $submit   = new \XoopsFormButton('', 'submit', _AM_XFORMS_SAVE, 'submit');

@@ -31,9 +31,9 @@ $moduleDirName = basename(__DIR__);
 //include_once (XOOPS_ROOT_PATH . "/modules/{$moduleDirName}/include/functions.php");
 
 /*  @var array $modversion */
-$modversion['version']        = '2.12';
+$modversion['version']        = '2.14';
 $modversion['module_status']  = 'Alpha 1';
-$modversion['release_date']   = '2022/06/19';
+$modversion['release_date']   = '2023/02/17';
 $modversion['name']           = _MI_XFORMS_NAME;
 $modversion['description']    = _MI_XFORMS_DESC;
 $modversion['author']         = 'Brandycoke Productions, Dylian Melgert, Juan Garcés, Jean-Jacques Delalandre(JJDai)';

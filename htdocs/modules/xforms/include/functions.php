@@ -63,7 +63,8 @@ function getHtml($exp){
 //global $myts;
   $myts = \MyTextSanitizer::getInstance();
   //return  html_entity_decode($myts->displayTarea($exp));
-  return  html_entity_decode($myts->displayTarea($exp));
+  return  html_entity_decode($myts->htmlSpecialChars($exp));
+  //return  html_entity_decode($myts->displayTarea($exp));
 }
 
 /**********************************************
@@ -123,7 +124,7 @@ $codesFormat = "dDjlNSwzWFmMntLoYyaABgGhHisu";
 
   if ($bold == 1){
     $chrono1 = "<B>{$chrono}</B>";
-  }
+  }else $chrono1 = $chrono;
 
 
 
@@ -269,7 +270,6 @@ global $helper;
  **********************************************/
 function load_css($color="*"){
 global $helper;
-
 
     if ($helper->getConfig('css_folder') =="" ){
       $dir = "browse.php?" . get_css_path();

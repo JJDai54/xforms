@@ -1,33 +1,64 @@
-
-.item {
-    border: 0px solid #666;
-    border-radius: 8px 8px 0px 0px;
+.item-round-all{
+  border: 0px solid;
+  -moz-border-radius: 8px 8px 8px 8px;
+  -webkit-border-radius: 8px 8px 8px 8px;
+  -khtml-border-radius: 8px 8px 8px 8px;
+  border-radius: 8px 8px 8px 8px;
 }
-
-.itemHead {
-    padding: 3px;
-    background-color: #808080;
-    color: #fff;
+.item-round-top{
   -moz-border-radius: 8px 8px 0px 0px;
   -webkit-border-radius: 8px 8px 0px 0px;
   -khtml-border-radius: 8px 8px 0px 0px;
   border-radius: 8px 8px 0px 0px;
-
-    text-align:center;
 }
-
-.itemInfo {
-    text-align: center;
-    padding: 3px;
-    background-color: #BFBFBF;
+.item-round-bottom{
+  -moz-border-radius: 0px 0px 8px 8px;
+  -webkit-border-radius: 0px 0px 8px 8px;
+  -khtml-border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 8px 8px;
+}
+.item-round-no{
+  border: 0px solid;
   -moz-border-radius: 0px 0px 0px 0px;
   -webkit-border-radius: 0px 0px 0px 0px;
   -khtml-border-radius: 0px 0px 0px 0px;
-    border-radius: 0px 0px 0px 0px;
-
+  border-radius: 0px 0px 0px 0px;
+  margin:0px 0px 0px 0px;
+}
+.item-boder-no{
+  border: 0px solid;
+}
+/* ----------------------------- */
+.item-global {
+    border: 0px solid #666;
+    /* border-radius: 8px 8px 0px 0px;  */
 }
 
-.itemTitle a {
+.item-legend {
+    border: 1px solid;
+    border-radius: 4px 4px 4px 4px;
+    padding: 0px 18px 0px 18px;
+
+    /*width: 30px;*/
+    height: 25px;
+    float:left;
+    position:relative;
+}
+
+.item-head {
+    padding: 3px;
+    background-color: #808080;
+    color: #fff;
+
+    text-align:center;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-variant: small-caps;
+
+    background-color: transparent;
+}
+
+.item-head a {
     font-size: 0.80em;
     font-weight: bold;
     font-variant: small-caps;
@@ -36,22 +67,31 @@
 
 }
 
-.itemPoster {
+.item-info {
+    border: 0px solid;
+    text-align: center;
+    padding: 5px;
+    background-color: #BFBFBF;
+
+}
+
+
+.item-poster {
     font-size: .9em;
     font-style: italic;
 }
 
-.itemPostDate {
+.item-post-date {
     font-size: .9em;
     font-style: italic;
 }
 
-.itemStats {
+.item-stats {
     font-size: .9em;
     font-style: italic;
 }
 
-.itemBody {
+.item-body {
     padding-left: 5px;
     background-color: #F2F2F2;
     border: 0px solid;
@@ -61,7 +101,7 @@
     border-radius: 0px 0px 0px 0px;
     padding:12px;
 }
-.itemBody_scoop {
+.item-body-scoop {
     padding-left: 5px;
     background-color: #F2F2F2;
     border: 0px solid;
@@ -72,34 +112,44 @@
     padding:12px;
 }
 
-.itemText {
+.item-text {
     margin-top: 5px;
     margin-bottom: 5px;
     line-height: 1.5em;
 }
 
-.itemText:first-letter {
+.item-text:first-letter {
     font-size: 1.3em;
     font-weight: bold;
 }
 
-.itemFoot {
+.item-foot {
     text-align: right;
     padding: 3px;
     background-color: #D9D9D9;
     border: 0px solid;
-  -moz-border-radius: 0px 0px 8px 8px;
-  -webkit-border-radius: 0px 0px 8px 8px;
-  -khtml-border-radius: 0px 0px 8px 8px;
-  border-radius: 0px 0px 8px 8px;
 }
 
-.itemAdminLink {
+.item-admin-link {
     font-size: .9em;
 }
 
-.itemPermaLink {
+.item-perm-alink {
     font-size: .9em;
 }
 
+
+.item-title{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+
+}
+.item-info{
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding: 0px 12px 0px 12px;
+
+}
 

@@ -204,7 +204,7 @@ $helper = \XoopsModules\Xforms\Helper::getInstance();
                                   . \Xmf\Module\Admin::iconUrl('edit.png', '16') . '" class="tooltip floatcenter1" title="' . _AM_XFORMS_ACTION_EDITFORM . '" alt="'
                                   .  _AM_XFORMS_ACTION_EDITFORM . '"></a>'; 
                     
-                    $item['elements'] = '<a href="elements.php?form_id=' . $id . '"><img src="' . \Xmf\Module\Admin::iconUrl('inserttable.png', '16') . '" class="tooltip floatcenter1" title="' . _AM_XFORMS_ACTION_EDITELEMENT . '" alt="'
+                    $item['elements'] = '<a href="elements.php?form_id=' . $id . '&op=list"><img src="' . \Xmf\Module\Admin::iconUrl('inserttable.png', '16') . '" class="tooltip floatcenter1" title="' . _AM_XFORMS_ACTION_EDITELEMENT . '" alt="'
                                        . _AM_XFORMS_ACTION_EDITELEMENT . '"></a>';
                     
                     $item['clone'] = '<a href="' . $_SERVER['SCRIPT_NAME'] . '?op=edit&clone=1&form_id=' . $id . '"><img src="' . \Xmf\Module\Admin::iconUrl('editcopy.png', '16') . '" class="tooltip floatcenter1" title="' . _AM_XFORMS_ACTION_CLONE . '" alt="'

@@ -43,7 +43,8 @@ require_once '../include/functions.php';
 // );
 // $default = new \XoopsFormEditor(_AM_XFORMS_ELE_HTML_DEFAULT_DISP, 'ele_value[0]', $defaultEditorConfigs);
 
-$value = isset($value[0]) ? $myts->htmlSpecialChars($value[0]) : '';
+//$value = isset($value[0]) ? $myts->htmlSpecialChars($value[0]) : '';
+$value = isset($value[0]) ? $value[0] : '';
 $default = Xforms\get_editor(_AM_XFORMS_ELE_HTML_DEFAULT_DISP, 'ele_value[0]', $value, $width='100%', $height = '260px');
 
 /* JJDAi - Desactivation car il faut installé le plugin rendere pour tiny

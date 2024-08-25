@@ -16,7 +16,7 @@
  * @Module : Xoops FAQ
  * @subpackage : Menu Language
  * @since 2.5.7
- * @author John Neill
+ * @author John Neill - JJDai
  * @version $Id: modinfo.php 0000 10/04/2009 09:08:46 John Neill $
  * Traduction: LionHell 
  * upgrade to xoops 2.5.7 by Jean-Jacques DELALANDRE

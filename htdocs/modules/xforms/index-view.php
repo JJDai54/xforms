@@ -44,7 +44,10 @@ begin_proc:
         /*******************   Nouvelle Fiche ***********************/
         if (Constants::FORM_LIST_NO_SHOW === (int)$helper->getConfig('showforms')) {
             // Don't show the forms available if no parameter set
-            redirect_header($GLOBALS['xoops']->url('www'), Constants::REDIRECT_DELAY_MEDIUM, _MD_XFORMS_MSG_NOFORM_SELECTED);
+            //pas besoin de message sur cette redirection
+            //voir : 'showforms', "Oui - les formulaires disponibles pour l'utilisateur seront affichés sur la page d'index."
+            //"Non - l'utilisateur sera envoyé à la page d'accueil du site si aucun formulaire spécifique n'est sélectionné.");
+            redirect_header($GLOBALS['xoops']->url('www'), Constants::REDIRECT_DELAY_MEDIUM, '');
         }
         /* @var \XoopsModules\Xforms\FormsHandler $formsHandler */
         $forms = $formsHandler->getPermittedForms();

@@ -1,6 +1,6 @@
 <!-- Header -->
 <{*
-<{includeq file='db:slider_admin_header.tpl' }>
+<{include file='db:slider_admin_header.tpl' }>
 *}>
 
 <!-- About Page -->
@@ -30,5 +30,5 @@
 
 <!-- Footer -->
 <{*
-<{includeq file='db:slider_admin_footer.tpl' }>
+<{include file='db:slider_admin_footer.tpl' }>
 *}>

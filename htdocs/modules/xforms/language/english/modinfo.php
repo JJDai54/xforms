@@ -16,7 +16,7 @@
  * @Module : Xoops FAQ
  * @subpackage : Menu Language
  * @since 2.5.7
- * @author John Neill
+ * @author John Neill - JJDai
  * @version $Id: modinfo.php 0000 10/04/2009 09:08:46 John Neill $
  * Traduction: LionHell 
  * upgrade to xoops 2.5.7 by Jean-Jacques DELALANDRE
@@ -109,7 +109,7 @@ define('_MI_XFORMS_CSS_FOLDER_DESC', "Style sheets can be placed in a common fol
 define('_MI_XFORMS_ADMENU7', "Contact");
 define('_MI_XFORMS_ADMENU7_DESC', "Contact forms, allows you to respond to submissions");
 define('_MI_XFORMS_COLOR_SET', "Color scheme");
-define('_MI_XFORMS_COLOR_SET_DESC', "Set the default color scheme for items. The color schemes are defined in the CSS \"style-item-color.css \" module or theme or JJD framework (see module options)");
+define('_MI_XFORMS_COLOR_SET_DESC', "Set the default color scheme for items. The color schemes are defined in the CSS \"style-item-color.css \" module or theme or janus framework (see module options)");
 
 
 define('_MI_XFORMS_BANISH', "Avertissement pour les banissements");

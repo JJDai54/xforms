@@ -31,9 +31,9 @@ $moduleDirName = basename(__DIR__);
 //include_once (XOOPS_ROOT_PATH . "/modules/{$moduleDirName}/include/functions.php");
 
 /*  @var array $modversion */
-$modversion['version']        = '2.14';
-$modversion['module_status']  = 'Alpha 1';
-$modversion['release_date']   = '2023/02/17';
+$modversion['version']        = '3.16';
+$modversion['module_status']  = 'Beta 1';
+$modversion['release_date']   = '2025/08/25';
 $modversion['name']           = _MI_XFORMS_NAME;
 $modversion['description']    = _MI_XFORMS_DESC;
 $modversion['author']         = 'Brandycoke Productions, Dylian Melgert, Juan Garcés, Jean-Jacques Delalandre(JJDai)';
@@ -45,7 +45,7 @@ $modversion['image']          = 'assets/images/logoModule.png';
 $modversion['dirname']        = $moduleDirName;
 
 $modversion['author_mail']          = 'jjdelalandre@orange.fr';
-$modversion['author_website_url']   = 'http://jubile.fr';
+$modversion['author_website_url']   = 'https://xoopsfr.kiolo.fr';
 $modversion['author_website_name']  = 'Origami';
 $modversion['release_info']         = '';
 $modversion['release_file']         = '';
@@ -310,7 +310,7 @@ $modversion['config'][] = ['name' => 'css_folder',
                     'description' => '_MI_XFORMS_CSS_FOLDER_DESC',
                        'formtype' => 'textbox',
                       'valuetype' => 'text',
-                        'default' => ''];
+                        'default' => 'Frameworks/janus/css'];
                         
 $modversion['config'][] = ['name' => 'caution_for_banish',
                           'title' => '_MI_XFORMS_BANISH',

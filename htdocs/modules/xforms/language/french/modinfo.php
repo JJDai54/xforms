@@ -16,7 +16,7 @@
  * @Module : Xoops FAQ
  * @subpackage : Menu Language
  * @since 2.5.7
- * @author John Neill
+ * @author John Neill - JJDai
  * @version $Id: modinfo.php 0000 10/04/2009 09:08:46 John Neill $
  * Traduction: LionHell 
  * upgrade to xoops 2.5.7 by Jean-Jacques DELALANDRE
@@ -109,7 +109,7 @@ define('_MI_XFORMS_CSS_FOLDER_DESC', "Les feuilles de styles peuvent être plac�
 define('_MI_XFORMS_ADMENU7', "Contact");
 define('_MI_XFORMS_ADMENU7_DESC', "Formulaires de contact, permet de répondre soumissions");
 define('_MI_XFORMS_COLOR_SET', "Jeu de couleurs");
-define('_MI_XFORMS_COLOR_SET_DESC', "Défini le jeu de couleur par défaut des articles. Les jeux de couleurs sont définis dans le CSS \"style-item-color.css\" du module ou du theme ou du framework JJD (voir les options du module)");
+define('_MI_XFORMS_COLOR_SET_DESC', "Défini le jeu de couleur par défaut des articles. Les jeux de couleurs sont définis dans le CSS \"style-item-color.css\" du module ou du theme ou du framework janus (voir les options du module)");
 
 define('_MI_XFORMS_BANISH', "Avertissement pour les banissements");
 define('_MI_XFORMS_BANISH_DESC', "Ce texte sera affiché aux utilisateurs bannis");
